@@ -1,3 +1,3 @@
 <x-main-layout>
-    Test
+    Hello world
 </x-main-layout>
