@@ -8,11 +8,25 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    {{-- Fonts and icons --}}
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+
+    {{-- Nucleo Icons --}}
+    <link href="{{ asset('css/nucleo-icons.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/nucleo-svg.css') }}" rel="stylesheet" />
+
+    {{-- Font Awesome Icons --}}
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+
+    {{-- Material Icons --}}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
     {{-- Fonts --}}
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
-    {{-- Bootstap Styles --}}
+    {{-- Styles --}}
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dev.css') }}">
 
     {{-- Styles --}}
     @livewireStyles
@@ -21,8 +35,11 @@
     {{-- Navbar --}}
     <x-navbar />
 
+    {{-- Header --}}
+    {{ $header ?? null }}
+
     {{-- Slot --}}
-    <div class="container">
+    <div class="container py-5">
         {{ $slot }}
     </div>
     {{-- End Slot --}}
@@ -31,7 +48,7 @@
     <x-footer />
 
     {{-- Bootstap Scripts --}}
-    <link rel="stylesheet" href="{{ asset('js/app.js') }}">
+    <script src="{{ asset('js/app.js') }}"></script>
 
     @livewireScripts
 </body>
