@@ -1,0 +1,13 @@
+.splide__pagination--custom {
+    transform: translateY(3rem);
+}
+
+.slider_circle {
+    background-color: $color-primary;
+    padding: .5rem;
+}
+
+.slider_circle.is-active {
+    background-color: $color-primary;
+    opacity: 1;
+}

@@ -2,3 +2,93 @@
   width: 10rem;
   margin-right: 2rem;
 }
+
+.splide__pagination--custom {
+  transform: translateY(3rem);
+}
+
+.slider_circle {
+  background-color: rgb(221, 38, 103);
+  padding: 0.5rem;
+}
+
+.slider_circle.is-active {
+  background-color: rgb(221, 38, 103);
+  opacity: 1;
+}
+
+.category_card {
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.category_card:hover {
+  transform: scale(1.1);
+  box-shadow: 3px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 766px) and (min-width: 575px) {
+  .featured_card_col {
+    padding: 0 4rem;
+  }
+}
+@media only screen and (max-width: 575px) and (min-width: 500px) {
+  .featured_card_col {
+    padding: 0 5rem;
+  }
+}
+@media only screen and (max-width: 500px) and (min-width: 450px) {
+  .featured_card_col {
+    padding: 0 3rem;
+  }
+}
+.featured_card .card_img {
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.featured_card-img {
+  transition: all 0.2s;
+}
+.featured_card-img:hover {
+  transform: scale(1.1);
+}
+
+.featured_courses {
+  padding: 5rem 0 !important;
+}
+
+.reviews_section {
+  padding: 5rem 0 !important;
+}
+
+/* Link Hover effect */
+.hover_effect:hover {
+  transition: all 0.2s;
+}
+
+/* Zoom overflow */
+.zoom_overflow {
+  overflow: hidden;
+}
+
+/* Zoom hover effect*/
+.zoom_effect {
+  transition: all 0.2s;
+}
+.zoom_effect:hover {
+  transform: scale(1.1);
+}
+
+/* Change carousel mode to dark on small screens */
+@media screen and (max-width: 766px) {
+  .carousel-sm-dark .carousel-control-prev-icon, .carousel-sm-dark .carousel-control-next-icon {
+    filter: invert(1) grayscale(100);
+  }
+}
+
+/* Small font on small screens */
+@media screen and (max-width: 450px) {
+  .fs-sm-6 {
+    font-size: 1rem !important;
+  }
+}

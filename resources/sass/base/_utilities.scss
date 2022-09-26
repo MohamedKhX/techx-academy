@@ -1,0 +1,34 @@
+/* Link Hover effect */
+.hover_effect {
+    &:hover {
+        transition: all .2s;
+    }
+}
+
+/* Zoom overflow */
+.zoom_overflow {
+    overflow: hidden;
+}
+
+/* Zoom hover effect*/
+.zoom_effect {
+    transition: all .2s;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+/* Change carousel mode to dark on small screens */
+.carousel-sm-dark .carousel-control-prev-icon, .carousel-sm-dark .carousel-control-next-icon {
+    @media screen and (max-width: 766px){
+        filter: invert(1) grayscale(100);
+    }
+}
+
+/* Small font on small screens */
+.fs-sm-6 {
+    @media screen and (max-width: 450px){
+        font-size: 1rem !important;
+    }
+}
+
