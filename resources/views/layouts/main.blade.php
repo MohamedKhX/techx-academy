@@ -39,7 +39,7 @@
     {{ $header ?? null }}
 
     {{-- Slot --}}
-    <div class="container py-5">
+    <div class="py-5">
         {{ $slot }}
     </div>
     {{-- End Slot --}}
@@ -47,9 +47,12 @@
     {{-- Footer --}}
     <x-footer />
 
+
+    @livewireScripts
+
     {{-- Bootstap Scripts --}}
     <script src="{{ asset('js/app.js') }}"></script>
 
-    @livewireScripts
+    @stack('scripts')
 </body>
 </html>

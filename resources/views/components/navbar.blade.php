@@ -128,7 +128,7 @@
                                                         <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Input Areas</h6>
                                                         <span class="text-sm">See all input areas</span>
                                                     </div>
-                                                    <img src="{{ asset('img/down-arrow.svg') }} alt="down-arrow" class="arrow">
+                                                    <img src="{{ asset('img/down-arrow.svg') }}" alt="down-arrow" class="arrow">
                                                 </div>
                                             </a>
                                             <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
