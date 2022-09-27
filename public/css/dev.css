@@ -53,6 +53,10 @@
   transform: scale(1.1);
 }
 
+.footer_ul {
+  list-style: none;
+}
+
 .featured_courses {
   padding: 5rem 0 !important;
 }
