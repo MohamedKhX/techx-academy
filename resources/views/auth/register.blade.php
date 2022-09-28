@@ -1,3 +1,4 @@
+{{--
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
@@ -58,3 +59,41 @@
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>
+--}}
+<x-layouts.auth-layout>
+    <div class="mt-5">
+        <h3 class="text-dark fs-3">Sign up</h3>
+    </div>
+    <div class="mt-4">
+        <form>
+            <div class="mb-4">
+                <label for="name" class="label text-dark">Full Name</label>
+                <input id="name" type="text" class="input">
+            </div>
+            <div class="mb-4">
+                <label for="email" class="label text-dark">Email</label>
+                <input id="email" type="email" class="input">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="label text-dark">Password</label>
+                <input id="password" type="password" class="input">
+            </div>
+            <div class="form-check form-switch d-flex align-items-center mb-4 is-filled">
+                <input class="form-check-input" type="checkbox" id="rememberMe">
+                <label class="form-check-label mb-0 ms-3" for="rememberMe">
+                    I agree to the
+                    <a class="hover_effect" href="#">Terms of Service</a>
+                    and
+                    <a class="hover_effect" href="#">Privacy Policy.</a>
+                </label>
+            </div>
+            <div class="mt-1">
+                <button class="btn btn-lg bg-gradient-primary w-100">Create Account</button>
+            </div>
+        </form>
+    </div>
+
+    <x-slot name="guest">
+        <p>Already have an account? <a class="hover_effect forgot-link fs-6" href="#">Sign in</a></p>
+    </x-slot>
+</x-layouts.auth-layout>
