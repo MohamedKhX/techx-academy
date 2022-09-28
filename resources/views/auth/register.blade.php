@@ -65,28 +65,53 @@
         <h3 class="text-dark fs-3">Sign up</h3>
     </div>
     <div class="mt-4">
-        <form>
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
             <div class="mb-4">
                 <label for="name" class="label text-dark">Full Name</label>
-                <input id="name" type="text" class="input">
+                <input name="name" id="name" type="text" class="input" placeholder="Enter you name" value="{{ old('name') }}">
+                @error('name')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
             <div class="mb-4">
                 <label for="email" class="label text-dark">Email</label>
-                <input id="email" type="email" class="input">
+                <input name="email" id="email" type="email" class="input" placeholder="Enter you email address" value="{{ old('email') }}">
+                @error('email')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="password" class="label text-dark">Password</label>
-                <input id="password" type="password" class="input">
+                <input name="password" id="password" type="password" class="input" placeholder="Enter you password">
+                @error('password')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
-            <div class="form-check form-switch d-flex align-items-center mb-4 is-filled">
-                <input class="form-check-input" type="checkbox" id="rememberMe">
-                <label class="form-check-label mb-0 ms-3" for="rememberMe">
-                    I agree to the
-                    <a class="hover_effect" href="#">Terms of Service</a>
-                    and
-                    <a class="hover_effect" href="#">Privacy Policy.</a>
-                </label>
+            <div class="mb-3">
+                <label for="password_confirmation" class="label text-dark">Confirm Password</label>
+                <input name="password_confirmation" id="password_confirmation" type="password" class="input" placeholder="Confirm your password">
+                @error('password_confirmation')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
+            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
+                <div class="mb-4">
+                    <div class="form-check form-switch d-flex align-items-center is-filled">
+                        <input name="terms" id="terms" class="form-check-input" type="checkbox" {{ old('terms') ? 'checked' : null }}>
+                        <label class="form-check-label mb-0 ms-3" for="terms">
+                            I agree to the
+                            <a class="hover_effect" href="#">Terms of Service</a>
+                            and
+                            <a class="hover_effect" href="#">Privacy Policy.</a>
+                        </label>
+                    </div>
+                    @error('terms')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+
+            @endif
             <div class="mt-1">
                 <button class="btn btn-lg bg-gradient-primary w-100">Create Account</button>
             </div>
@@ -94,6 +119,6 @@
     </div>
 
     <x-slot name="guest">
-        <p>Already have an account? <a class="hover_effect forgot-link fs-6" href="#">Sign in</a></p>
+        <p>Already have an account? <a class="hover_effect forgot-link fs-6" href="{{ route('login') }}">Sign in</a></p>
     </x-slot>
 </x-layouts.auth-layout>
