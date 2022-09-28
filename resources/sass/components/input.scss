@@ -1,0 +1,29 @@
+.input {
+    display: block;
+    padding: 6px 15px;
+    color: #26292c;
+    width: 100%;
+    font-size: 15px;
+    min-height: 50px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    appearance: none;
+    outline: none;
+    background-clip: padding-box;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+    &:focus {
+        border: 1px solid $color-primary;
+    }
+}
+
+.label {
+    font-size: 1rem;
+}
+
+.forgot-link {
+    color: #392C7D;
+    font-size: .9rem;
+    font-weight: bold;
+}
+

@@ -53,6 +53,36 @@
   transform: scale(1.1);
 }
 
+.input {
+  display: block;
+  padding: 6px 15px;
+  color: #26292c;
+  width: 100%;
+  font-size: 15px;
+  min-height: 50px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  background-clip: padding-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.input:focus {
+  border: 1px solid rgb(221, 38, 103);
+}
+
+.label {
+  font-size: 1rem;
+}
+
+.forgot-link {
+  color: #392C7D;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
 .footer_ul {
   list-style: none;
 }
@@ -63,6 +93,17 @@
 
 .reviews_section {
   padding: 5rem 0 !important;
+}
+
+.auth_background {
+  background-image: linear-gradient(to left, #f5eff0, white);
+  background-size: cover;
+  top: 0;
+  left: 0;
+  position: fixed;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 /* Link Hover effect */

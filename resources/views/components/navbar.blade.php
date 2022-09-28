@@ -403,9 +403,10 @@
                                 </a>
                             </li>
                             <li class="nav-item my-auto ms-3 ms-lg-0">
-
-                                <a href="https://www.creative-tim.com/product/material-kit-pro" class="btn btn-sm  bg-gradient-primary  mb-0 me-1 mt-2 mt-md-0">Upgrade to Pro</a>
-
+                                <a href="#" class="btn btn-sm btn-outline-dark mb-0 me-1 mt-2 mt-md-0">Sign in</a>
+                            </li>
+                            <li class="nav-item my-auto ms-3 ms-lg-0">
+                                <a href="#" class="btn btn-sm bg-gradient-primary mb-0 me-1 mt-2 mt-md-0">Sign up</a>
                             </li>
                         </ul>
                     </div>

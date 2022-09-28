@@ -1,4 +1,5 @@
 import '../../node_modules/bootstrap/dist/js/bootstrap.bundle.min';
+import './material_kit/material-kit.min';
 
 /* Init Alpine */
 import Alpine from 'alpinejs';
