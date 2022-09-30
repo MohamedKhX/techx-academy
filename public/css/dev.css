@@ -1,6 +1,25 @@
+.accordion {
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='var%28--bs-body-color%29'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --bs-accordion-btn-icon-width: 1.25rem;
+  --bs-accordion-btn-icon-transform: rotate(-180deg);
+  --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230c63e4'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+body {
+  font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+}
+
 .logo {
   width: 10rem;
   margin-right: 2rem;
+}
+
+.box {
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .splide__pagination--custom {
@@ -106,6 +125,58 @@
   align-items: center;
 }
 
+/* To make it responsive by decreasing the font size */
+@media screen and (max-width: 1200px) {
+  .course_html {
+    font-size: 83.5%;
+  }
+}
+@media screen and (max-width: 460px) {
+  .course_html {
+    font-size: 90%;
+  }
+}
+
+.course_info {
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 360px) {
+  .course_info {
+    flex-wrap: wrap;
+    row-gap: 1rem;
+  }
+}
+
+.video-col {
+  margin-top: -17rem;
+  z-index: 10;
+}
+
+.includes_ul {
+  list-style: none;
+  padding: 0;
+}
+.includes_ul li {
+  padding: 0.6rem 0;
+  color: black;
+}
+
+.lesson_accordion:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.lesson_accordion:not(:first-child) {
+  padding-top: 1rem;
+}
+
+.about_the_instructor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
 /* Link Hover effect */
 .hover_effect:hover {
   transition: all 0.2s;
@@ -136,4 +207,34 @@
   .fs-sm-6 {
     font-size: 1rem !important;
   }
+}
+
+/* New fs-7 utility */
+.fs-7 {
+  font-size: 0.9rem;
+}
+
+/* Font black color */
+.text-black {
+  color: #151515;
+}
+
+/* Font black gray color */
+.text-blackGray {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* text-decoration-line: line-through */
+.mid-line {
+  text-decoration-line: line-through;
+}
+
+/* Round button corner */
+.btn-rounded {
+  border-radius: 2rem;
+}
+
+/* Background Color to black */
+.black {
+  background-image: linear-gradient(90deg, black, black);
 }

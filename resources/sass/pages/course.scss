@@ -1,0 +1,54 @@
+/* To make it responsive by decreasing the font size */
+.course_html {
+    @media screen and (max-width: 1200px) {
+        font-size: 83.5%;
+    }
+
+    @media screen and (max-width: 460px) {
+        font-size: 90%;
+    }
+}
+
+.course_info {
+    display: flex;
+    align-items: center;
+
+
+    @media screen and (max-width: 360px) {
+        flex-wrap: wrap;
+        row-gap: 1rem;
+    }
+}
+
+.video-col {
+    margin-top: -17rem;
+    z-index: 10;
+}
+
+.includes_ul {
+    list-style: none;
+    padding: 0;
+    li {
+        padding: .6rem 0;
+        color: black;
+    }
+}
+.lesson_accordion  {
+
+    &:not(:last-child) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    }
+
+    &:not(:first-child) {
+        padding-top: 1rem;
+    }
+
+}
+
+.about_the_instructor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}

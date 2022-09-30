@@ -23,7 +23,7 @@
   @include transition($input-transition);
 
   &[type="file"] {
-    overflow: hidden; // prevent pseudo element button overlap
+    overflow: hidden; // prevent pseudo element button.scss overlap
 
     &:not(:disabled):not([readonly]) {
       cursor: pointer;

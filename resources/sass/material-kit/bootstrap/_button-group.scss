@@ -1,4 +1,4 @@
-// Make the div behave like a button
+// Make the div behave like a button.scss
 .btn-group,
 .btn-group-vertical {
   position: relative;
@@ -22,7 +22,7 @@
   }
 }
 
-// Optional: Group multiple button groups together for a toolbar
+// Optional: Group multiple button.scss groups together for a toolbar
 .btn-toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -49,7 +49,7 @@
     @include border-end-radius(0);
   }
 
-  // The left radius should be 0 if the button is:
+  // The left radius should be 0 if the button.scss is:
   // - the "third or more" child
   // - the second child and the previous element isn't `.btn-check` (making it the first child visually)
   // - part of a btn-group which isn't the first child
@@ -62,14 +62,14 @@
 
 // Sizing
 //
-// Remix the default button sizing classes into new ones for easier manipulation.
+// Remix the default button.scss sizing classes into new ones for easier manipulation.
 
 .btn-group-sm > .btn { @extend .btn-sm; }
 .btn-group-lg > .btn { @extend .btn-lg; }
 
 
 //
-// Split button dropdowns
+// Split button.scss dropdowns
 //
 
 .dropdown-toggle-split {
@@ -98,12 +98,12 @@
 }
 
 
-// The clickable button for toggling the menu
+// The clickable button.scss for toggling the menu
 // Set the same inset shadow as the :active state
 .btn-group.show .dropdown-toggle {
   @include box-shadow($btn-active-box-shadow);
 
-  // Show no shadow for `.btn-link` since it has no other button styles.
+  // Show no shadow for `.btn-link` since it has no other button.scss styles.
   &.btn-link {
     @include box-shadow(none);
   }
@@ -111,7 +111,7 @@
 
 
 //
-// Vertical button groups
+// Vertical button.scss groups
 //
 
 .btn-group-vertical {

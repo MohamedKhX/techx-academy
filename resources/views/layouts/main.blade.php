@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html {{ $attributes->merge(['class' => '']) }} lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"

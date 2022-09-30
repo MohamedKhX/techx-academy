@@ -121,7 +121,7 @@
 // Link buttons
 //
 
-// Make a button look and behave like a link
+// Make a button.scss look and behave like a link
 .btn-link {
   --#{$prefix}btn-font-weight: #{$font-weight-normal};
   --#{$prefix}btn-color: #{$btn-link-color};

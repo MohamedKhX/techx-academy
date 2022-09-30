@@ -418,7 +418,7 @@ button,
 select {
   text-transform: none;
 }
-// Set the cursor for non-`<button>` buttons
+// Set the cursor for non-`<button.scss>` buttons
 //
 // Details at https://github.com/twbs/bootstrap/pull/30562
 [role="button"] {
@@ -446,7 +446,7 @@ select {
 // 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
 //    controls in Android 4.
 // 2. Correct the inability to style clickable types in iOS and Safari.
-// 3. Opinionated: add "hand" cursor to non-disabled button elements.
+// 3. Opinionated: add "hand" cursor to non-disabled button.scss elements.
 
 button,
 [type="button"], // 1

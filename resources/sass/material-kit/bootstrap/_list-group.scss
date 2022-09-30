@@ -45,13 +45,13 @@
 
 // Interactive list items
 //
-// Use anchor or button elements instead of `li`s or `div`s to create interactive
+// Use anchor or button.scss elements instead of `li`s or `div`s to create interactive
 // list items. Includes an extra `.active` modifier class for selected items.
 
 .list-group-item-action {
-  width: 100%; // For `<button>`s (anchors become 100% by default though)
+  width: 100%; // For `<button.scss>`s (anchors become 100% by default though)
   color: var(--#{$prefix}list-group-action-color);
-  text-align: inherit; // For `<button>`s (anchors inherit)
+  text-align: inherit; // For `<button.scss>`s (anchors inherit)
 
   // Hover state
   &:hover,
@@ -96,7 +96,7 @@
     background-color: var(--#{$prefix}list-group-disabled-bg);
   }
 
-  // Include both here for `<a>`s and `<button>`s
+  // Include both here for `<a>`s and `<button.scss>`s
   &.active {
     z-index: 2; // Place active items above their siblings for proper border styling
     color: var(--#{$prefix}list-group-active-color);

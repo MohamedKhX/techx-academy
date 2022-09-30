@@ -32,3 +32,32 @@
     }
 }
 
+/* New fs-7 utility */
+.fs-7 {
+    font-size: .9rem;
+}
+
+/* Font black color */
+.text-black {
+    color: #151515;
+}
+
+/* Font black gray color */
+.text-blackGray {
+    color: rgba(0,0,0, .8);
+}
+
+/* text-decoration-line: line-through */
+.mid-line {
+    text-decoration-line: line-through;
+}
+
+/* Round button corner */
+.btn-rounded {
+    border-radius: 2rem;
+}
+
+/* Background Color to black */
+.black {
+    background-image: linear-gradient(90deg,black, black);
+}

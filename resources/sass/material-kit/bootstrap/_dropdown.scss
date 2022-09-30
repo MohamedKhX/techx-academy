@@ -158,19 +158,19 @@
 
 // Links, buttons, and more within the dropdown menu
 //
-// `<button>`-specific styles are denoted with `// For <button>s`
+// `<button.scss>`-specific styles are denoted with `// For <button.scss>s`
 .dropdown-item {
   display: block;
-  width: 100%; // For `<button>`s
+  width: 100%; // For `<button.scss>`s
   padding: var(--#{$prefix}dropdown-item-padding-y) var(--#{$prefix}dropdown-item-padding-x);
   clear: both;
   font-weight: $font-weight-normal;
   color: var(--#{$prefix}dropdown-link-color);
-  text-align: inherit; // For `<button>`s
+  text-align: inherit; // For `<button.scss>`s
   text-decoration: if($link-decoration == none, null, none);
   white-space: nowrap; // prevent links from randomly breaking onto new lines
-  background-color: transparent; // For `<button>`s
-  border: 0; // For `<button>`s
+  background-color: transparent; // For `<button.scss>`s
+  border: 0; // For `<button.scss>`s
 
   // Prevent dropdown overflow if there's no padding
   // See https://github.com/twbs/bootstrap/pull/27703

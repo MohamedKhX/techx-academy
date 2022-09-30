@@ -1,9 +1,13 @@
 @import "abstract/variables";
+@import "base/typography";
 @import "components/navbar";
+@import "components/box";
 @import "components/slider";
 @import "components/card";
 @import "components/input";
+@import "components/button";
 @import "layout/footer";
 @import "pages/home";
 @import "pages/auth";
+@import "pages/course";
 @import "base/utilities";
