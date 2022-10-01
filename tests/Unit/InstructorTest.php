@@ -37,4 +37,13 @@ class InstructorTest extends TestCase
         $this->assertInstanceOf(Course::class, $this->instructor->courses->first());
     }
 
+    /** @test */
+    public function it_will_be_deleted_when_the_user_deleted()
+    {
+        $user       = User::factory()->create();
+        $instructor = Instructor::factory()->create(['user_id' => $user->id]);
+
+        $user->delete();
+        $this->assertDatabaseMissing('instructors', ['id' => $instructor->id]);
+    }
 }

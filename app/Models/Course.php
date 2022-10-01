@@ -52,4 +52,12 @@ class Course extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    /*
+     * Get course reviews
+     * */
+    public function reviews(): HasMany
+    {
+        return $this->hasMany(Review::class);
+    }
 }

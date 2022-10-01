@@ -32,4 +32,29 @@ class ReviewTest extends TestCase
     {
         $this->assertInstanceOf(Course::class, $this->review->course);
     }
+
+    /** @test */
+    public function the_reviews_will_be_deleted_when_the_user_deleted()
+    {
+        $user = User::factory()->create();
+        $review = Review::factory()->create(['user_id' => $user->id]);
+
+        $user->delete();
+        $this->assertDatabaseMissing('reviews', ['id' => $review->id]);
+    }
+
+    /** @test */
+    public function the_reviews_will_be_deleted_when_the_course_deleted()
+    {
+        $course = Course::factory()->create();
+
+        $this->review->delete();
+
+        $review    = Review::factory()->create(['course_id' => $course->id]);
+        $reviewTwo = Review::factory()->create(['course_id' => $course->id]);
+
+        $course->delete();
+        $this->assertDatabaseMissing('reviews', ['id' => $this->review->course_id]);
+        $this->assertDatabaseCount('reviews', 0);
+    }
 }

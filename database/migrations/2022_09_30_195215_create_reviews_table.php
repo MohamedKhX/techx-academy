@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->unique(['user_id', 'course_id']);
-            $table->foreignId('user_id');
-            $table->foreignId('course_id');
-            $table->text('review')->nullable();
+            $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreignId('course_id')->references('id')->on('courses')->cascadeOnDelete();
+            $table->text('body')->nullable();
             $table->integer('rating');
             $table->timestamps();
         });

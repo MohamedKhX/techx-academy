@@ -4,8 +4,10 @@ namespace Tests\Unit;
 
 use App\Models\Instructor;
 use App\Models\Profile;
+use App\Models\Review;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Collection;
 use Tests\TestCase;
 
 class UserTest extends TestCase
@@ -40,5 +42,14 @@ class UserTest extends TestCase
     {
         Profile::factory()->create(['user_id' => $this->user->id]);
         $this->assertInstanceOf(Profile::class, $this->user->profile);
+    }
+
+    /** @test */
+    public function it_has_reviews()
+    {
+        Review::factory()->create(['user_id' => $this->user->id]);
+
+        $this->assertInstanceOf(Collection::class, $this->user->reviews);
+        $this->assertInstanceOf(Review::class, $this->user->reviews->first());
     }
 }

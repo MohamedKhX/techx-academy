@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Review extends Model
+class Answer extends Model
 {
     use HasFactory;
 
     /*
-     * Get the user who made the review
+     * Get the user who answered the question
      * */
     public function user(): BelongsTo
     {
@@ -19,10 +19,10 @@ class Review extends Model
     }
 
     /*
-     * Get the course that belong to this review
+     * Get the question, where the answer was written.
      * */
-    public function course(): BelongsTo
+    public function question(): BelongsTo
     {
-        return $this->belongsTo(Course::class);
+        return $this->belongsTo(Question::class);
     }
 }

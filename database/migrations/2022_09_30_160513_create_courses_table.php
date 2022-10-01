@@ -25,7 +25,7 @@ return new class extends Migration
             $table->boolean('is_free');
 
             $table->foreignId('category_id');
-            $table->foreignId('instructor_id');
+            $table->foreignId('instructor_id')->references('id')->on('instructors')->onDelete('cascade');
             $table->foreignId('level_id');
 
             $table->timestamps();
