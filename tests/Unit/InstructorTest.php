@@ -46,4 +46,10 @@ class InstructorTest extends TestCase
         $user->delete();
         $this->assertDatabaseMissing('instructors', ['id' => $instructor->id]);
     }
+
+    /** @test */
+    public function skills_field_should_casts_to_collection()
+    {
+        $this->assertEquals('collection', $this->instructor->getCasts()['skills']);
+    }
 }

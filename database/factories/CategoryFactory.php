@@ -18,7 +18,8 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => User::factory()->create(),
+            'name' => $this->faker->word(),
+            'image_url' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png'
         ];
     }
 }

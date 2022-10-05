@@ -70,110 +70,30 @@
                 <p class="fw-bold text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Molestiae recusandae reprehenderit sed unde?  Dolorem eius eos quae quia quod voluptates?</p>
             </div>
             <x-slider id="topCategories" per-page="4" col="col-12">
-                <li class="splide__slide pt-5 pb-5">
-                    <div class="splide__slide__container">
-                        <div class="card category_card border">
-                            <div class="d-flex justify-content-center card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                <a class="d-block blur-shadow-image w-25">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" alt="img-blur-shadow" class="img-fluid border-radius-lg">
-                                </a>
-                            </div>
-                            <div class="card-body pt-0 text-center">
-                                <h5 class="font-weight-normal mt-3">
-                                    <a class="fw-bold hover_effect" href="#">Python <br> Development</a>
-                                    <p class="text-secondary fw-bold mt-4">30 Courses</p>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="splide__slide pt-5 pb-5">
-                    <div class="splide__slide__container">
-                        <div class="card category_card border">
-                            <div class="d-flex justify-content-center card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                <a class="d-block blur-shadow-image w-25">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png" alt="img-blur-shadow" class="img-fluid border-radius-lg ">
-                                </a>
-                            </div>
-                            <div class="card-body pt-0 text-center">
-                                <h5 class="font-weight-normal mt-3">
-                                    <a class="fw-bold hover_effect" href="#">Laravel <br> Development</a>
-                                    <p class="text-secondary fw-bold mt-4">28 Courses</p>
-                                </h5>
+                @foreach($categories as $category)
+                    <li class="splide__slide pt-5 pb-5">
+                        <div class="splide__slide__container">
+                            <div class="card category_card border">
+                                <div class="d-flex justify-content-center card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                                    <a class="d-block blur-shadow-image w-25">
+                                        <img src="{{ $category->image_url }}" alt="img-blur-shadow" class="img-fluid border-radius-lg">
+                                    </a>
+                                </div>
+                                <div class="card-body pt-0 text-center">
+                                    <h5 class="font-weight-normal mt-3">
+                                        <a class="fw-bold hover_effect" href="#">
+                                            {{ $category->name }}
+                                        </a>
+                                        <p class="text-secondary fw-bold mt-4">
+                                            {{ $category->courses_count }}
+                                            Courses
+                                        </p>
+                                    </h5>
+                                </div>
                             </div>
                         </div>
-
-                    </div>
-                </li>
-                <li class="splide__slide pt-5 pb-5">
-                    <div class="splide__slide__container">
-                        <div class="card category_card border">
-                            <div class="d-flex justify-content-center card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                <a class="d-block blur-shadow-image w-25">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png" alt="img-blur-shadow" class="img-fluid border-radius-lg">
-                                </a>
-                            </div>
-                            <div class="card-body pt-0 text-center">
-                                <h5 class="font-weight-normal mt-3">
-                                    <a class="fw-bold hover_effect" href="#">Javascript <br> Development</a>
-                                    <p class="text-secondary fw-bold mt-4">74 Courses</p>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="splide__slide pt-5 pb-5">
-                    <div class="splide__slide__container">
-                        <div class="card category_card border">
-                            <div class="d-flex justify-content-center card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                <a class="d-block blur-shadow-image w-25">
-                                    <img src="https://github.com/symfony.png" alt="img-blur-shadow" class="img-fluid border-radius-lg">
-                                </a>
-                            </div>
-                            <div class="card-body pt-0 text-center">
-                                <h5 class="font-weight-normal mt-3">
-                                    <a class="fw-bold hover_effect" href="#">Symfony <br> Development</a>
-                                    <p class="text-secondary fw-bold mt-4">4 Courses</p>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="splide__slide pt-5 pb-5">
-                    <div class="splide__slide__container">
-                        <div class="card category_card border">
-                            <div class="d-flex justify-content-center card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                <a class="d-block blur-shadow-image w-25">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png" alt="img-blur-shadow" class="img-fluid border-radius-lg ">
-                                </a>
-                            </div>
-                            <div class="card-body pt-0 text-center">
-                                <h5 class="font-weight-normal mt-3">
-                                    <a class="fw-bold hover_effect" href="#">Laravel <br> Development</a>
-                                    <p class="text-secondary fw-bold mt-4">28 Courses</p>
-                                </h5>
-                            </div>
-                        </div>
-
-                    </div>
-                </li>
-                <li class="splide__slide pt-5 pb-5">
-                    <div class="splide__slide__container">
-                        <div class="card category_card border">
-                            <div class="d-flex justify-content-center card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                <a class="d-block blur-shadow-image w-25">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png" alt="img-blur-shadow" class="img-fluid border-radius-lg">
-                                </a>
-                            </div>
-                            <div class="card-body pt-0 text-center">
-                                <h5 class="font-weight-normal mt-3">
-                                    <a class="fw-bold hover_effect" href="#">Javascript <br> Development</a>
-                                    <p class="text-secondary fw-bold mt-4">74 Courses</p>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                @endforeach
             </x-slider>
         </div>
 
@@ -188,287 +108,62 @@
                 <h2 class="mb-4 text-white">Featured Courses</h2>
                 <p class="font-weight-normal text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Molestiae recusandae reprehenderit sed unde?<br>  Dolorem eius eos quae quia quod voluptates?</p>
             </div>
-            <x-slider id="featuredCourses" col="col-12">
-                <li class="splide__slide pt-5">
-                    <div class="splide__slide__container">
-                        <div class="card featured_card">
-                            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                <a class="card_img d-block blur-shadow-image">
-                                    <img src="https://dreamslms.dreamguystech.com/assets/img/course/course-01.jpg" alt="img-blur-shadow" class="img-fluid featured_card-img shadow border-radius-lg w-100">
-                                </a>
-                                <div class="colored-shadow"></div>
-                            </div>
-                            <div class="card-body pt-3">
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex">
-                                        <img width="60" height="60" class="rounded-circle" src="https://dreamslms.dreamguystech.com/assets/img/user/user1.jpg" alt="">
-                                        <div class="ms-2">
-                                            <h6 class="mb-1"><a class="hover_effect" href="#">Mohamed Khalid</a></h6>
-                                            <span>Instructor</span>
+            <x-slider id="featuredCourses" col="col-12" class="align-content-stretch align-items-stretch">
+                @foreach($courses as $course)
+                    <li class="splide__slide pt-5">
+                        <div class="splide__slide__container h-100">
+                            <div class="card featured_card h-100">
+                                <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                                    <a class="card_img d-block blur-shadow-image">
+                                        <img src="{{ $course->cover }}" alt="img-blur-shadow" class="img-fluid featured_card-img shadow border-radius-lg w-100">
+                                    </a>
+                                    <div class="colored-shadow"></div>
+                                </div>
+                                <div class="card-body pt-3">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex">
+                                            <img width="60" height="60" class="rounded-circle" src="https://dreamslms.dreamguystech.com/html/assets/img/user/user2.jpg" alt="">
+                                            <div class="ms-2">
+                                                <h6 class="mb-0"><a class="hover_effect" href="#">{{ $course->instructor->user->name }}</a></h6>
+                                                <span>Instructor</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <a href="#">
+                                                <i class="material-icons fs-4 me-2 hover_effect">favorite</i>
+                                            </a>
                                         </div>
                                     </div>
-                                    <div>
-                                        <a href="#">
-                                            <i class="material-icons fs-4 me-2 text-primary">favorite</i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h5 class="font-weight-bold mt-3 pe-3">
-                                    <a class="hover_effect" href="#">Information About UI/UX Design Degree</a>
-                                </h5>
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex align-items-center">
-                                        <i class="material-icons me-2">book</i>
-                                        12+ Lessons
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <i class="material-icons me-2">timer</i>
-                                        9hr 20min
-                                    </div>
-                                </div>
-                            </div>
-                            <hr class="dark horizontal my-0">
-                            <div class="card-footer d-flex py-2">
-                                <p class="d-flex align-items-center font-weight-normal my-auto">
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons">star</i>
-                                    <span class="ms-2">4.0</span>
-                                    <span class="ms-2">(23)</span>
-                                </p>
-                                <p class="ms-auto d-flex align-items-center my-auto fs-5 text-dark fw-bold">
-                                    $79.00
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="splide__slide pt-5">
-                    <div class="splide__slide__container">
-                        <div class="card featured_card">
-                            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                <a class="card_img d-block blur-shadow-image">
-                                    <img src="https://dreamslms.dreamguystech.com/assets/img/course/course-01.jpg" alt="img-blur-shadow" class="img-fluid featured_card-img shadow border-radius-lg w-100">
-                                </a>
-                                <div class="colored-shadow"></div>
-                            </div>
-                            <div class="card-body pt-3">
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex">
-                                        <img width="60" height="60" class="rounded-circle" src="https://dreamslms.dreamguystech.com/assets/img/user/user1.jpg" alt="">
-                                        <div class="ms-2">
-                                            <h6 class="mb-1"><a class="hover_effect" href="#">Mohamed Khalid</a></h6>
-                                            <span>Instructor</span>
+                                    <h5 class="font-weight-bold mt-3 pe-3">
+                                        <a class="hover_effect" href="#">{{ $course->title }}</a>
+                                    </h5>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <i class="material-icons me-2">book</i>
+                                            {{ $course->lessons_count }}+ Lesson
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <i class="material-icons me-2">timer</i>
+                                            9hr 20min
                                         </div>
                                     </div>
-                                    <div>
-                                        <a href="#">
-                                            <i class="material-icons fs-4 me-2 text-primary">favorite</i>
-                                        </a>
-                                    </div>
                                 </div>
-                                <h5 class="font-weight-bold mt-3 pe-3">
-                                    <a class="hover_effect" href="#">Information About UI/UX Design Degree</a>
-                                </h5>
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex align-items-center">
-                                        <i class="material-icons me-2">book</i>
-                                        12+ Lessons
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <i class="material-icons me-2">timer</i>
-                                        9hr 20min
-                                    </div>
+                                <hr class="dark horizontal my-0">
+                                <div class="card-footer d-flex py-2">
+                                    <p class="d-flex align-items-center font-weight-normal my-auto">
+                                        {!! $course->getStarsIcons() !!}
+                                        <span class="ms-2"> {{ $course->rating }}</span>
+                                        <span class="ms-2">({{ $course->reviews_count }})</span>
+                                    </p>
+                                    <p class="ms-auto d-flex align-items-center my-auto fs-6 text-dark fw-bold">
+                                        {{ $course->level->name }}
+                                    </p>
                                 </div>
-                            </div>
-                            <hr class="dark horizontal my-0">
-                            <div class="card-footer d-flex py-2">
-                                <p class="d-flex align-items-center font-weight-normal my-auto">
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons">star</i>
-                                    <span class="ms-2">4.0</span>
-                                    <span class="ms-2">(23)</span>
-                                </p>
-                                <p class="ms-auto d-flex align-items-center my-auto fs-5 text-dark fw-bold">
-                                    $79.00
-                                </p>
                             </div>
                         </div>
-                    </div>
-                </li>
-                <li class="splide__slide pt-5">
-                    <div class="splide__slide__container">
-                        <div class="card featured_card">
-                            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                <a class="card_img d-block blur-shadow-image">
-                                    <img src="https://dreamslms.dreamguystech.com/assets/img/course/course-01.jpg" alt="img-blur-shadow" class="img-fluid featured_card-img shadow border-radius-lg w-100">
-                                </a>
-                                <div class="colored-shadow"></div>
-                            </div>
-                            <div class="card-body pt-3">
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex">
-                                        <img width="60" height="60" class="rounded-circle" src="https://dreamslms.dreamguystech.com/assets/img/user/user1.jpg" alt="">
-                                        <div class="ms-2">
-                                            <h6 class="mb-1"><a class="hover_effect" href="#">Mohamed Khalid</a></h6>
-                                            <span>Instructor</span>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <a href="#">
-                                            <i class="material-icons fs-4 me-2 text-primary">favorite</i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h5 class="font-weight-bold mt-3 pe-3">
-                                    <a class="hover_effect" href="#">Information About UI/UX Design Degree</a>
-                                </h5>
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex align-items-center">
-                                        <i class="material-icons me-2">book</i>
-                                        12+ Lessons
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <i class="material-icons me-2">timer</i>
-                                        9hr 20min
-                                    </div>
-                                </div>
-                            </div>
-                            <hr class="dark horizontal my-0">
-                            <div class="card-footer d-flex py-2">
-                                <p class="d-flex align-items-center font-weight-normal my-auto">
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons">star</i>
-                                    <span class="ms-2">4.0</span>
-                                    <span class="ms-2">(23)</span>
-                                </p>
-                                <p class="ms-auto d-flex align-items-center my-auto fs-5 text-dark fw-bold">
-                                    $79.00
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="splide__slide pt-5">
-                    <div class="splide__slide__container">
-                        <div class="card featured_card">
-                            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                <a class="card_img d-block blur-shadow-image">
-                                    <img src="https://dreamslms.dreamguystech.com/assets/img/course/course-01.jpg" alt="img-blur-shadow" class="img-fluid featured_card-img shadow border-radius-lg w-100">
-                                </a>
-                                <div class="colored-shadow"></div>
-                            </div>
-                            <div class="card-body pt-3">
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex">
-                                        <img width="60" height="60" class="rounded-circle" src="https://dreamslms.dreamguystech.com/assets/img/user/user1.jpg" alt="">
-                                        <div class="ms-2">
-                                            <h6 class="mb-1"><a class="hover_effect" href="#">Mohamed Khalid</a></h6>
-                                            <span>Instructor</span>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <a href="#">
-                                            <i class="material-icons fs-4 me-2 text-primary">favorite</i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h5 class="font-weight-bold mt-3 pe-3">
-                                    <a class="hover_effect" href="#">Information About UI/UX Design Degree</a>
-                                </h5>
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex align-items-center">
-                                        <i class="material-icons me-2">book</i>
-                                        12+ Lessons
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <i class="material-icons me-2">timer</i>
-                                        9hr 20min
-                                    </div>
-                                </div>
-                            </div>
-                            <hr class="dark horizontal my-0">
-                            <div class="card-footer d-flex py-2">
-                                <p class="d-flex align-items-center font-weight-normal my-auto">
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons">star</i>
-                                    <span class="ms-2">4.0</span>
-                                    <span class="ms-2">(23)</span>
-                                </p>
-                                <p class="ms-auto d-flex align-items-center my-auto fs-5 text-dark fw-bold">
-                                    $79.00
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="splide__slide pt-5">
-                    <div class="splide__slide__container">
-                        <div class="card featured_card">
-                            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                <a class="card_img d-block blur-shadow-image">
-                                    <img src="https://dreamslms.dreamguystech.com/assets/img/course/course-01.jpg" alt="img-blur-shadow" class="img-fluid featured_card-img shadow border-radius-lg w-100">
-                                </a>
-                                <div class="colored-shadow"></div>
-                            </div>
-                            <div class="card-body pt-3">
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex">
-                                        <img width="60" height="60" class="rounded-circle" src="https://dreamslms.dreamguystech.com/assets/img/user/user1.jpg" alt="">
-                                        <div class="ms-2">
-                                            <h6 class="mb-1"><a class="hover_effect" href="#">Mohamed Khalid</a></h6>
-                                            <span>Instructor</span>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <a href="#">
-                                            <i class="material-icons fs-4 me-2 text-primary">favorite</i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h5 class="font-weight-bold mt-3 pe-3">
-                                    <a class="hover_effect" href="#">Information About UI/UX Design Degree</a>
-                                </h5>
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex align-items-center">
-                                        <i class="material-icons me-2">book</i>
-                                        12+ Lessons
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <i class="material-icons me-2">timer</i>
-                                        9hr 20min
-                                    </div>
-                                </div>
-                            </div>
-                            <hr class="dark horizontal my-0">
-                            <div class="card-footer d-flex py-2">
-                                <p class="d-flex align-items-center font-weight-normal my-auto">
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons text-primary">star</i>
-                                    <i class="material-icons">star</i>
-                                    <span class="ms-2">4.0</span>
-                                    <span class="ms-2">(23)</span>
-                                </p>
-                                <p class="ms-auto d-flex align-items-center my-auto fs-5 text-dark fw-bold">
-                                    $79.00
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                @endforeach
+
             </x-slider>
         </div>
     </section>
@@ -483,121 +178,28 @@
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea error maiores modi optio! Autem eum explicabo <br> impedit laudantium molestiae nemo perspiciatis qui sed sequi totam.
                 </p>
             </div>
-            <x-slider id="featuredInstructor" class="mb-7">
-                <li class="splide__slide rounded-3 pb-3 px-0 border border-1">
-                    <div class="splide__slide__container">
-                        <div class="d-flex flex-column text-center">
-                            <div class="zoom_overflow">
-                                <a href="">
-                                    <img class="rounded-top w-100 zoom_effect" src="https://dreamslms.dreamguystech.com/assets/img/user/user7.jpg" alt="">
-                                </a>
-                            </div>
-                            <div>
-                                <h5 class="mt-3"><a class="hover_effect" href="#">Ahmed obama</a></h5>
-                                <span class="mt-3">UI Designer</span>
-                                <div class="d-flex justify-content-center mt-3">
-                                    <i class="material-icons fs-4 me-2 text-primary">group</i>
-                                    <span>30 Students</span>
+            <x-slider id="featuredInstructor" per-page="4" class="mb-7" col="col-12">
+                @foreach($instructors as $instructor)
+                    <li class="splide__slide rounded-3 pb-3 px-0 border border-1">
+                        <div class="splide__slide__container">
+                            <div class="d-flex flex-column text-center">
+                                <div class="zoom_overflow">
+                                    <a href="">
+                                        <img class="rounded-top w-100 zoom_effect" src="https://img-c.udemycdn.com/user/200_H/4466306_6fd8_3.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div>
+                                    <h5 class="mt-3"><a class="hover_effect" href="#">{{ $instructor->user->name }}</a></h5>
+                                    <span class="mt-3">{{ $instructor->skills->first() }}</span>
+                                    <div class="d-flex justify-content-center mt-3">
+                                        <i class="material-icons fs-4 me-2 text-primary">group</i>
+                                        <span>30 Students</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-                <li class="splide__slide rounded-3 pb-3 px-0 border border-1">
-                    <div class="splide__slide__container">
-                        <div class="d-flex flex-column text-center">
-                            <div class="zoom_overflow">
-                                <a href="">
-                                    <img class="rounded-top w-100 zoom_effect" src="https://dreamslms.dreamguystech.com/assets/img/user/user7.jpg" alt="">
-                                </a>
-                            </div>
-                            <div>
-                                <h5 class="mt-3"><a class="hover_effect" href="#">Ahmed obama</a></h5>
-                                <span class="mt-3">UI Designer</span>
-                                <div class="d-flex justify-content-center mt-3">
-                                    <i class="material-icons fs-4 me-2 text-primary">group</i>
-                                    <span>30 Students</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="splide__slide rounded-3 pb-3 px-0 border border-1">
-                    <div class="splide__slide__container">
-                        <div class="d-flex flex-column text-center">
-                            <div class="zoom_overflow">
-                                <a href="">
-                                    <img class="rounded-top w-100 zoom_effect" src="https://dreamslms.dreamguystech.com/assets/img/user/user7.jpg" alt="">
-                                </a>
-                            </div>
-                            <div>
-                                <h5 class="mt-3"><a class="hover_effect" href="#">Ahmed obama</a></h5>
-                                <span class="mt-3">UI Designer</span>
-                                <div class="d-flex justify-content-center mt-3">
-                                    <i class="material-icons fs-4 me-2 text-primary">group</i>
-                                    <span>30 Students</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="splide__slide rounded-3 pb-3 px-0 border border-1">
-                    <div class="splide__slide__container">
-                        <div class="d-flex flex-column text-center">
-                            <div class="zoom_overflow">
-                                <a href="">
-                                    <img class="rounded-top w-100 zoom_effect" src="https://dreamslms.dreamguystech.com/assets/img/user/user7.jpg" alt="">
-                                </a>
-                            </div>
-                            <div>
-                                <h5 class="mt-3"><a class="hover_effect" href="#">Ahmed obama</a></h5>
-                                <span class="mt-3">UI Designer</span>
-                                <div class="d-flex justify-content-center mt-3">
-                                    <i class="material-icons fs-4 me-2 text-primary">group</i>
-                                    <span>30 Students</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="splide__slide rounded-3 pb-3 px-0 border border-1">
-                    <div class="splide__slide__container">
-                        <div class="d-flex flex-column text-center">
-                            <div class="zoom_overflow">
-                                <a href="">
-                                    <img class="rounded-top w-100 zoom_effect" src="https://dreamslms.dreamguystech.com/assets/img/user/user7.jpg" alt="">
-                                </a>
-                            </div>
-                            <div>
-                                <h5 class="mt-3"><a class="hover_effect" href="#">Ahmed obama</a></h5>
-                                <span class="mt-3">UI Designer</span>
-                                <div class="d-flex justify-content-center mt-3">
-                                    <i class="material-icons fs-4 me-2 text-primary">group</i>
-                                    <span>30 Students</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="splide__slide rounded-3 pb-3 px-0 border border-1">
-                    <div class="splide__slide__container">
-                        <div class="d-flex flex-column text-center">
-                            <div class="zoom_overflow">
-                                <a href="">
-                                    <img class="rounded-top w-100 zoom_effect" src="https://dreamslms.dreamguystech.com/assets/img/user/user7.jpg" alt="">
-                                </a>
-                            </div>
-                            <div>
-                                <h5 class="mt-3"><a class="hover_effect" href="#">Ahmed obama</a></h5>
-                                <span class="mt-3">UI Designer</span>
-                                <div class="d-flex justify-content-center mt-3">
-                                    <i class="material-icons fs-4 me-2 text-primary">group</i>
-                                    <span>30 Students</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                @endforeach
             </x-slider>
         </div>
     </section>

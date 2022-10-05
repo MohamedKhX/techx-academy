@@ -11,7 +11,7 @@ class Review extends Model
     use HasFactory;
 
     /*
-     * Get the user who made the review
+     * Get the user who wrote the review
      * */
     public function user(): BelongsTo
     {

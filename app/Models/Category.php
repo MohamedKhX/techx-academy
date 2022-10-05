@@ -10,6 +10,15 @@ class Category extends Model
 {
     use HasFactory;
 
+    /**
+     * The relations to eager load on every query.
+     *
+     * @var array
+     */
+    protected $withCount = [
+        'courses'
+    ];
+
     /*
      * Get the courses that belong to this category
      * */

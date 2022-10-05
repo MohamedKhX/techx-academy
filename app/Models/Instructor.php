@@ -11,6 +11,15 @@ class Instructor extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+      'skills' => 'collection'
+    ];
+
     /*
      * Get the user that belongs to
      * */

@@ -52,13 +52,13 @@ class CourseTest extends TestCase
     }
 
     /** @test */
-    public function it_cascade_the_requirements_field_to_json()
+    public function requirements_field_should_casts_to_json()
     {
         $this->assertEquals('json', $this->course->getCasts()['requirements']);
     }
 
     /** @test */
-    public function it_cascade_the_what_you_will_learn_field_to_json()
+    public function what_you_will_learn_field_should_casts_to_json()
     {
         $this->assertEquals('json', $this->course->getCasts()['what_you_will_learn']);
     }
@@ -81,5 +81,58 @@ class CourseTest extends TestCase
         $instructor->delete();
 
         $this->assertDatabaseMissing('courses', ['id' => $course->id]);
+    }
+
+    /** @test */
+    public function course_average_rating_works()
+    {
+        Review::factory(2)->create([
+            'course_id' => $this->course->id,
+            'rating' => 4
+        ]);
+
+        Review::factory(2)->create([
+            'course_id' => $this->course->id,
+            'rating' => 2.5
+        ]);
+
+        Review::factory(3)->create([
+            'course_id' => $this->course->id,
+            'rating' => 3.5
+        ]);
+
+        $course = Course::find(1);
+
+        $this->assertEquals('3.4', $course->rating);
+    }
+
+    /**
+     * it should convert from [1.0, 1.1, 1.2, 1.3, 1.4] to 1
+     * and from [1.5, 1.6, 1.7, 1.8, 1.9] to 1.5
+     * @test
+     */
+    public function it_generate_the_correct_stars_count()
+    {
+        function test(int $courseId, float $rating, string $expected, TestCase $testCase): void
+        {
+            if(Review::first()) {
+                Review::first()->delete();
+            }
+            Review::factory()->create(['course_id' => $courseId, 'rating' => $rating]);
+            $course = Course::find(1);
+            $testCase->assertEquals($expected, $course->getStarsCount());
+        }
+
+        test(courseId: $this->course->id, rating: 2.0, expected: '2', testCase: $this);
+        test(courseId: $this->course->id, rating: 2.1, expected: '2', testCase: $this);
+        test(courseId: $this->course->id, rating: 2.2, expected: '2', testCase: $this);
+        test(courseId: $this->course->id, rating: 2.3, expected: '2', testCase: $this);
+        test(courseId: $this->course->id, rating: 2.4, expected: '2', testCase: $this);
+
+        test(courseId: $this->course->id, rating: 2.5, expected: '2.5', testCase: $this);
+        test(courseId: $this->course->id, rating: 2.6, expected: '2.5', testCase: $this);
+        test(courseId: $this->course->id, rating: 2.7, expected: '2.5', testCase: $this);
+        test(courseId: $this->course->id, rating: 2.8, expected: '2.5', testCase: $this);
+        test(courseId: $this->course->id, rating: 2.9, expected: '2.5', testCase: $this);
     }
 }

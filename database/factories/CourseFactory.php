@@ -22,7 +22,7 @@ class CourseFactory extends Factory
         return [
             'title'        => $this->faker->sentence(5),
             'subTitle'     => $this->faker->sentence(10),
-            'cover'        => 'img',
+            'cover'        => 'https://dreamslms.dreamguystech.com/html/assets/img/course/course-06.jpg',
             'description'  => $this->faker->paragraphs(2, true),
             'requirements' => $this->faker->sentences(3),
             'is_free'      => true,
