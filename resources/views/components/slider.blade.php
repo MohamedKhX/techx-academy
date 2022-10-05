@@ -1,12 +1,12 @@
 @props([
     'id',
     'col'     => 'col-10',
-    'classes' => 'row justify-content-center mt-5 pt-2 gap-4',
+    'classes' => 'row justify-content-center pt-2 gap-4',
     'perPage' => 3,
     'breakPoints' => null
 ])
 
-<div {{ $attributes->merge(['class' => $classes]) }} >
+<div {{ $attributes->merge(['class' => $classes])}} >
     <div class="{{ $col }}">
         <div id="{{ $id }}" class="splide" role="group">
             <div class="splide__track">

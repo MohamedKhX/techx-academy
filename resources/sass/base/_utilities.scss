@@ -37,6 +37,13 @@
     font-size: .9rem;
 }
 
+/* New fs-8 utility */
+.fs-sm-8 {
+    @media screen and (max-width: 450px){
+        font-size: .75rem !important;
+    }
+}
+
 /* Font black color */
 .text-black {
     color: #151515;
@@ -59,5 +66,5 @@
 
 /* Background Color to black */
 .black {
-    background-image: linear-gradient(90deg,black, black);
+    background-image: linear-gradient(90deg,black, black) !important;
 }

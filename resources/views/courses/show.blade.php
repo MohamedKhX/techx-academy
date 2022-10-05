@@ -5,10 +5,13 @@
             <div class="container-fluid container-md z-index-2">
                 <div class="row">
                     <div class="col-12 col-lg-8 py-5">
-                        <div class="d-flex flex-column flex-md-row justify-content-between align-content-start align-items-md-center  mb-3">
+                        <div
+                            class="d-flex flex-column flex-md-row justify-content-between align-content-start align-items-md-center  mb-3">
                             <div class="d-flex">
                                 <div class="course_info">
-                                    <img width="60" class="rounded-circle" src="https://dreamslms.dreamguystech.com/html/assets/img/user/user1.jpg" alt="">
+                                    <img width="60" class="rounded-circle"
+                                         src="https://dreamslms.dreamguystech.com/html/assets/img/user/user1.jpg"
+                                         alt="">
                                     <div class="mx-3">
                                         <h6 class="my-0">
                                             <a class="text-white" href="#">Instructor Name</a>
@@ -34,19 +37,24 @@
                         </div>
                         <div>
                             <h2 class="text-white">The Complete Web Developer Course 2.0</h2>
-                            <p class="text-white">Learn Web Development by building 25 websites and mobile apps using HTML, CSS, Javascript, PHP, Python, MySQL & more!</p>
+                            <p class="text-white">Learn Web Development by building 25 websites and mobile apps using
+                                HTML, CSS, Javascript, PHP, Python, MySQL & more!</p>
                         </div>
                         <div class="d-flex align-items-center flex-wrap gap-3">
                             <div class="d-flex align-items-center text-white me-3">
-                                <img class="me-2" src="https://dreamslms.dreamguystech.com/html/assets/img/icon/icon-01.svg" alt="">
+                                <img class="me-2"
+                                     src="https://dreamslms.dreamguystech.com/html/assets/img/icon/icon-01.svg" alt="">
                                 <span>12+ Lessons</span>
                             </div>
                             <div class="d-flex align-items-center text-white me-3">
-                                <img class="me-2" src="https://dreamslms.dreamguystech.com/html/assets/img/icon/timer-icon.svg" alt="">
+                                <img class="me-2"
+                                     src="https://dreamslms.dreamguystech.com/html/assets/img/icon/timer-icon.svg"
+                                     alt="">
                                 <span>9hr 30min</span>
                             </div>
                             <div class="d-flex align-items-center text-white me-3">
-                                <img class="me-2" src="https://dreamslms.dreamguystech.com/html/assets/img/icon/people.svg" alt="">
+                                <img class="me-2"
+                                     src="https://dreamslms.dreamguystech.com/html/assets/img/icon/people.svg" alt="">
                                 <span>32 Students enrolled</span>
                             </div>
                         </div>
@@ -59,7 +67,7 @@
         <div class="row">
 
             <div class="col-12 col-lg-4 d-lg-none mt-5">
-                @include('course._video-col')
+                @include('courses._video-col')
             </div>
 
             <div class="col-12 col-lg-8 ">
@@ -69,10 +77,16 @@
                         <h6 class="text-black font-weight-bolder">Course Description</h6>
                         <div class="text-blackGray">
                             <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                printer took a galley of type and scrambled it to make a type specimen book. It has
+                                survived not only five centuries, but also the leap into electronic typesetting,
+                                remaining essentially unchanged.
                             </p>
                             <p>
-                                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                It was popularised in the 1960s with the release of Letraset sheets containing Lorem
+                                Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
+                                including versions of Lorem Ipsum.
                             </p>
                         </div>
                     </div>
@@ -101,7 +115,9 @@
                         <div class="requirements text-blackGray">
                             <h6 class="text-black font-weight-bolder">Requirements</h6>
                             <ul>
-                                <li>You will need a copy of Adobe XD 2019 or above. A free trial can be downloaded from Adobe.</li>
+                                <li>You will need a copy of Adobe XD 2019 or above. A free trial can be downloaded from
+                                    Adobe.
+                                </li>
                                 <li>No previous design experience is needed.</li>
                                 <li>No previous Adobe XD skills are needed.</li>
                             </ul>
@@ -118,16 +134,21 @@
                         <div class="accordion" id="accordionCourseLessons">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button text-black d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="accordion-button text-black d-flex justify-content-between"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                            aria-expanded="true" aria-controls="collapseOne">
                                         In which areas do you operate?
                                     </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionCourseLessons">
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                     aria-labelledby="headingOne" data-bs-parent="#accordionCourseLessons">
                                     <div class="accordion-body text-blackGray">
                                         <ul class="list-unstyled">
                                             <li class="lesson_accordion d-flex justify-content-between">
                                                 <p>
-                                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg" alt="">
+                                                    <img
+                                                        src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg"
+                                                        alt="">
                                                     Lecture1.1 Introduction to the User Experience Course
                                                 </p>
                                                 <div class="d-flex">
@@ -137,7 +158,9 @@
                                             </li>
                                             <li class="lesson_accordion d-flex justify-content-between">
                                                 <p>
-                                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg" alt="">
+                                                    <img
+                                                        src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg"
+                                                        alt="">
                                                     Lecture1.1 Introduction to the User Experience Course
                                                 </p>
                                                 <div class="d-flex">
@@ -147,7 +170,9 @@
                                             </li>
                                             <li class="lesson_accordion d-flex justify-content-between">
                                                 <p>
-                                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg" alt="">
+                                                    <img
+                                                        src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg"
+                                                        alt="">
                                                     Lecture1.1 Introduction to the User Experience Course
                                                 </p>
                                                 <div class="d-flex">
@@ -161,16 +186,21 @@
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button text-black d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                    <button class="accordion-button text-black d-flex justify-content-between"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="true" aria-controls="collapseTwo">
                                         The Brief
                                     </button>
                                 </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionCourseLessons">
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                     data-bs-parent="#accordionCourseLessons">
                                     <div class="accordion-body text-blackGray">
                                         <ul class="list-unstyled">
                                             <li class="lesson_accordion d-flex justify-content-between">
                                                 <p>
-                                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg" alt="">
+                                                    <img
+                                                        src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg"
+                                                        alt="">
                                                     Lecture1.1 Introduction to the User Experience Course
                                                 </p>
                                                 <div class="d-flex">
@@ -180,7 +210,9 @@
                                             </li>
                                             <li class="lesson_accordion d-flex justify-content-between">
                                                 <p>
-                                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg" alt="">
+                                                    <img
+                                                        src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg"
+                                                        alt="">
                                                     Lecture1.1 Introduction to the User Experience Course
                                                 </p>
                                                 <div class="d-flex">
@@ -190,7 +222,9 @@
                                             </li>
                                             <li class="lesson_accordion d-flex justify-content-between">
                                                 <p>
-                                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg" alt="">
+                                                    <img
+                                                        src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg"
+                                                        alt="">
                                                     Lecture1.1 Introduction to the User Experience Course
                                                 </p>
                                                 <div class="d-flex">
@@ -200,7 +234,9 @@
                                             </li>
                                             <li class="lesson_accordion d-flex justify-content-between">
                                                 <p>
-                                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg" alt="">
+                                                    <img
+                                                        src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg"
+                                                        alt="">
                                                     Lecture1.1 Introduction to the User Experience Course
                                                 </p>
                                                 <div class="d-flex">
@@ -210,7 +246,9 @@
                                             </li>
                                             <li class="lesson_accordion d-flex justify-content-between">
                                                 <p>
-                                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg" alt="">
+                                                    <img
+                                                        src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg"
+                                                        alt="">
                                                     Lecture1.1 Introduction to the User Experience Course
                                                 </p>
                                                 <div class="d-flex">
@@ -224,16 +262,21 @@
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button text-black d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                    <button class="accordion-button text-black d-flex justify-content-between"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="true" aria-controls="collapseThree">
                                         Wireframing Low Fidelity
                                     </button>
                                 </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionCourseLessons">
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                     aria-labelledby="headingThree" data-bs-parent="#accordionCourseLessons">
                                     <div class="accordion-body text-blackGray">
                                         <ul class="list-unstyled">
                                             <li class="lesson_accordion d-flex justify-content-between">
                                                 <p>
-                                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg" alt="">
+                                                    <img
+                                                        src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg"
+                                                        alt="">
                                                     Lecture1.1 Introduction to the User Experience Course
                                                 </p>
                                                 <div class="d-flex">
@@ -243,7 +286,9 @@
                                             </li>
                                             <li class="lesson_accordion d-flex justify-content-between">
                                                 <p>
-                                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg" alt="">
+                                                    <img
+                                                        src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg"
+                                                        alt="">
                                                     Lecture1.1 Introduction to the User Experience Course
                                                 </p>
                                                 <div class="d-flex">
@@ -253,7 +298,9 @@
                                             </li>
                                             <li class="lesson_accordion d-flex justify-content-between">
                                                 <p>
-                                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg" alt="">
+                                                    <img
+                                                        src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg"
+                                                        alt="">
                                                     Lecture1.1 Introduction to the User Experience Course
                                                 </p>
                                                 <div class="d-flex">
@@ -263,7 +310,9 @@
                                             </li>
                                             <li class="lesson_accordion d-flex justify-content-between">
                                                 <p>
-                                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg" alt="">
+                                                    <img
+                                                        src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg"
+                                                        alt="">
                                                     Lecture1.1 Introduction to the User Experience Course
                                                 </p>
                                                 <div class="d-flex">
@@ -273,7 +322,9 @@
                                             </li>
                                             <li class="lesson_accordion d-flex justify-content-between">
                                                 <p>
-                                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg" alt="">
+                                                    <img
+                                                        src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg"
+                                                        alt="">
                                                     Lecture1.1 Introduction to the User Experience Course
                                                 </p>
                                                 <div class="d-flex">
@@ -283,7 +334,9 @@
                                             </li>
                                             <li class="lesson_accordion d-flex justify-content-between">
                                                 <p>
-                                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg" alt="">
+                                                    <img
+                                                        src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg"
+                                                        alt="">
                                                     Lecture1.1 Introduction to the User Experience Course
                                                 </p>
                                                 <div class="d-flex">
@@ -293,7 +346,9 @@
                                             </li>
                                             <li class="lesson_accordion d-flex justify-content-between">
                                                 <p>
-                                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg" alt="">
+                                                    <img
+                                                        src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg"
+                                                        alt="">
                                                     Lecture1.1 Introduction to the User Experience Course
                                                 </p>
                                                 <div class="d-flex">
@@ -307,16 +362,21 @@
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button text-black d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                    <button class="accordion-button text-black d-flex justify-content-between"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                            aria-expanded="true" aria-controls="collapseFour">
                                         Type, Color & Icon Introduction
                                     </button>
                                 </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionCourseLessons">
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                     data-bs-parent="#accordionCourseLessons">
                                     <div class="accordion-body text-blackGray">
                                         <ul class="list-unstyled">
                                             <li class="lesson_accordion d-flex justify-content-between">
                                                 <p>
-                                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg" alt="">
+                                                    <img
+                                                        src="https://dreamslms.dreamguystech.com/html/assets/img/icon/play.svg"
+                                                        alt="">
                                                     Lecture1.1 Introduction to the User Experience Course
                                                 </p>
                                                 <div class="d-flex">
@@ -335,7 +395,8 @@
                     <h5 class="font-weight-bolder text-info mb-3">About the instructor</h5>
                     <div class="about_the_instructor">
                         <div class="d-flex align-items-center">
-                            <img width="50" class="rounded-circle" src="https://dreamslms.dreamguystech.com/html/assets/img/user/user1.jpg" alt="">
+                            <img width="50" class="rounded-circle"
+                                 src="https://dreamslms.dreamguystech.com/html/assets/img/user/user1.jpg" alt="">
                             <div class="mx-3">
                                 <h5 class="my-0 font-weight-bolder text-blackGray">
                                     <a class="" href="#">Nicole Brown</a>
@@ -364,15 +425,18 @@
                                     <span class="fs-6 ms-1 text-dark fw-bolder">5 Courses</span>
                                 </li>
                                 <li class="me-4">
-                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/icon-01.svg" alt="">
+                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/icon-01.svg"
+                                         alt="">
                                     <span class="fs-6 ms-1 text-dark fw-bolder">12+ Lesson</span>
                                 </li>
                                 <li class="me-4">
-                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/icon-02.svg" alt="">
+                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/icon-02.svg"
+                                         alt="">
                                     <span class="fs-6 ms-1 text-dark fw-bolder">9hr 30min</span>
                                 </li>
                                 <li class="me-4">
-                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/people.svg" alt="">
+                                    <img src="https://dreamslms.dreamguystech.com/html/assets/img/icon/people.svg"
+                                         alt="">
                                     <span class="fs-6 ms-1 text-dark fw-bolder">270,866 students enrolled</span>
                                 </li>
                             </ul>
@@ -381,7 +445,10 @@
                     </div>
                     <div class="text-blackGray">
                         <p>UI/UX Designer, with 7+ Years Experience. Guarantee of High Quality Work.</p>
-                        <p>Skills: Web Design, UI Design, UX/UI Design, Mobile Design, User Interface Design, Sketch, Photoshop, GUI, Html, Css, Grid Systems, Typography, Minimal, Template, English, Bootstrap, Responsive Web Design, Pixel Perfect, Graphic Design, Corporate, Creative, Flat, Luxury and much more.</p>
+                        <p>Skills: Web Design, UI Design, UX/UI Design, Mobile Design, User Interface Design, Sketch,
+                            Photoshop, GUI, Html, Css, Grid Systems, Typography, Minimal, Template, English, Bootstrap,
+                            Responsive Web Design, Pixel Perfect, Graphic Design, Corporate, Creative, Flat, Luxury and
+                            much more.</p>
                         <p>
                             Available for:<br>
                             <br>
@@ -413,7 +480,8 @@
                             <div class="d-flex align-items-center">
                                 <div class="progress-wrapper w-100 me-3">
                                     <div class="progress">
-                                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
+                                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="65"
+                                             aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
                                     </div>
                                 </div>
                                 <div class="ms-auto">
@@ -430,7 +498,8 @@
                             <div class="d-flex align-items-center mt-2">
                                 <div class="progress-wrapper w-100 me-3">
                                     <div class="progress">
-                                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%;"></div>
+                                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="20"
+                                             aria-valuemin="0" aria-valuemax="100" style="width: 20%;"></div>
                                     </div>
                                 </div>
                                 <div class="ms-auto">
@@ -447,7 +516,8 @@
                             <div class="d-flex align-items-center mt-2">
                                 <div class="progress-wrapper w-100 me-3">
                                     <div class="progress">
-                                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width: 5%;"></div>
+                                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="5"
+                                             aria-valuemin="0" aria-valuemax="100" style="width: 5%;"></div>
                                     </div>
                                 </div>
                                 <div class="ms-auto d-flex">
@@ -465,7 +535,8 @@
                             <div class="d-flex align-items-center mt-2">
                                 <div class="progress-wrapper w-100 me-3">
                                     <div class="progress">
-                                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%;"></div>
+                                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="2"
+                                             aria-valuemin="0" aria-valuemax="100" style="width: 2%;"></div>
                                     </div>
                                 </div>
                                 <div class="ms-auto">
@@ -482,7 +553,8 @@
                             <div class="d-flex align-items-center mt-2">
                                 <div class="progress-wrapper w-100 me-3">
                                     <div class="progress">
-                                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+                                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="1"
+                                             aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
                                     </div>
                                 </div>
                                 <div class="ms-auto">
@@ -522,7 +594,9 @@
                         <div class="review_box box">
                             <div class="d-flex">
                                 <div class="d-none d-sm-block">
-                                    <img width="60" class="rounded-circle me-4" src="https://dreamslms.dreamguystech.com/html/assets/img/user/user1.jpg" alt="">
+                                    <img width="60" class="rounded-circle me-4"
+                                         src="https://dreamslms.dreamguystech.com/html/assets/img/user/user1.jpg"
+                                         alt="">
                                 </div>
                                 <div>
                                     <h6 class="text-black fw-bolder">Nguyen Dang Hoang (CEP.ESS) N.</h6>
@@ -534,14 +608,18 @@
                                         <i class="material-icons">star</i>
                                         <span class="ms-2">a weak ago</span>
                                     </p>
-                                    <p class="text-blackGray mt-2">This course helps me to know and be aware of some fundamental concept of TS. And, I also like the practical way in which help me to understand the concept.</p>
+                                    <p class="text-blackGray mt-2">This course helps me to know and be aware of some
+                                        fundamental concept of TS. And, I also like the practical way in which help me
+                                        to understand the concept.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="review_box box mt-3">
                             <div class="d-flex">
                                 <div class="d-none d-sm-block">
-                                    <img width="60" class="rounded-circle me-4" src="https://dreamslms.dreamguystech.com/html/assets/img/user/user1.jpg" alt="">
+                                    <img width="60" class="rounded-circle me-4"
+                                         src="https://dreamslms.dreamguystech.com/html/assets/img/user/user1.jpg"
+                                         alt="">
                                 </div>
                                 <div>
                                     <h6 class="text-black fw-bolder">Nguyen Dang Hoang (CEP.ESS) N.</h6>
@@ -553,14 +631,18 @@
                                         <i class="material-icons">star</i>
                                         <span class="ms-2">a weak ago</span>
                                     </p>
-                                    <p class="text-blackGray mt-2">This course helps me to know and be aware of some fundamental concept of TS. And, I also like the practical way in which help me to understand the concept.</p>
+                                    <p class="text-blackGray mt-2">This course helps me to know and be aware of some
+                                        fundamental concept of TS. And, I also like the practical way in which help me
+                                        to understand the concept.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="review_box box mt-3">
                             <div class="d-flex">
                                 <div class="d-none d-sm-block">
-                                    <img width="60" class="rounded-circle me-4" src="https://dreamslms.dreamguystech.com/html/assets/img/user/user1.jpg" alt="">
+                                    <img width="60" class="rounded-circle me-4"
+                                         src="https://dreamslms.dreamguystech.com/html/assets/img/user/user1.jpg"
+                                         alt="">
                                 </div>
                                 <div>
                                     <h6 class="text-black fw-bolder">Nguyen Dang Hoang (CEP.ESS) N.</h6>
@@ -572,7 +654,9 @@
                                         <i class="material-icons">star</i>
                                         <span class="ms-2">a weak ago</span>
                                     </p>
-                                    <p class="text-blackGray mt-2">This course helps me to know and be aware of some fundamental concept of TS. And, I also like the practical way in which help me to understand the concept.</p>
+                                    <p class="text-blackGray mt-2">This course helps me to know and be aware of some
+                                        fundamental concept of TS. And, I also like the practical way in which help me
+                                        to understand the concept.</p>
                                 </div>
                             </div>
                         </div>
@@ -581,7 +665,7 @@
             </div>
 
             <div class="col-12 col-lg-4 video-col d-none d-lg-block">
-                @include('course._video-col')
+                @include('courses._video-col')
             </div>
 
         </div>

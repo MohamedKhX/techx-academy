@@ -81,7 +81,7 @@
                                 </div>
                                 <div class="card-body pt-0 text-center">
                                     <h5 class="font-weight-normal mt-3">
-                                        <a class="fw-bold hover_effect" href="#">
+                                        <a class="fw-bold hover_effect" href="{{ route('category.show', $category) }}">
                                             {{ $category->name }}
                                         </a>
                                         <p class="text-secondary fw-bold mt-4">

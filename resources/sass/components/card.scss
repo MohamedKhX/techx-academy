@@ -34,3 +34,17 @@
         }
     }
 }
+
+.horizontal_card-img {
+    width: 18rem;
+    height: 11.8rem;
+    @media only screen and (max-width: 766px) and (min-width: 300px) {
+        width: 6rem;
+        height: 4rem;
+    }
+
+    @media only screen and (max-width: 380px){
+        width: 4rem;
+        height: 3rem;
+    }
+}

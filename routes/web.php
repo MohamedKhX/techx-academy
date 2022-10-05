@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/categories/{category:slug}', [CategoryController::class, 'show'])->name('category.show');
 
-Route::view('/course', 'course.show');
+Route::view('/course', 'courses.show');
 
 Route::middleware([
     'auth:sanctum',

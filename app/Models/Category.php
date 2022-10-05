@@ -11,6 +11,20 @@ class Category extends Model
     use HasFactory;
 
     /**
+     * Bootstrap the model and its traits.
+     *
+     * @return void
+     */
+    protected static function boot(): void
+    {
+        parent::boot();
+
+        static::creating(function ($category) {
+            $category->slug = \Str::slug($category->name);
+        });
+    }
+
+    /**
      * The relations to eager load on every query.
      *
      * @var array

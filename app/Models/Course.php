@@ -43,7 +43,7 @@ class Course extends Model
     ];
 
     /*
-     * Get the lessons for the course.
+     * Get the lessons for the courses.
      * */
     public function lessons(): HasMany
     {
@@ -51,7 +51,7 @@ class Course extends Model
     }
 
     /*
-     * Get the instructor who created this course
+     * Get the instructor who created this courses
      * */
     public function instructor(): BelongsTo
     {
@@ -59,7 +59,7 @@ class Course extends Model
     }
 
     /*
-     * Get course level
+     * Get courses level
      * */
     public function level(): BelongsTo
     {
@@ -75,7 +75,7 @@ class Course extends Model
     }
 
     /*
-     * Get course reviews
+     * Get courses reviews
      * */
     public function reviews(): HasMany
     {
@@ -83,7 +83,7 @@ class Course extends Model
     }
 
     /*
-     * Get course rating
+     * Get courses rating
      * */
     public function rating(): Attribute
     {
@@ -112,13 +112,13 @@ class Course extends Model
         $number = $this->getStarsCount();
 
         for ($i = 1; $i <= $number; $i++) {
-            $html .= '<i class="material-icons text-primary">star</i>';
+            $html .= "<i class='material-icons ${starColor}'>star</i>";
         }
 
         $theRest = 5 - $number;
 
         if(is_float($theRest)) {
-            $html .= '<i class="material-icons"><span class="text-primary">st</span>ar</i>';
+            $html .= "<i class='material-icons'><span class=' ${starColor}'>st</span>ar</i>";
         }
 
         for ($i = 1; $i <= $theRest; $i++) {

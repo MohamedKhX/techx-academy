@@ -19,7 +19,7 @@ class Review extends Model
     }
 
     /*
-     * Get the course that belong to this review
+     * Get the courses that belong to this review
      * */
     public function course(): BelongsTo
     {

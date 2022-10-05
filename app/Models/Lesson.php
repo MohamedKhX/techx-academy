@@ -12,7 +12,7 @@ class Lesson extends Model
     use HasFactory;
 
     /*
-     * Get the course the lesson belongs to.
+     * Get the courses the lesson belongs to.
      * */
     public function course(): BelongsTo
     {
