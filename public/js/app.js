@@ -6744,8 +6744,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_bootstrap_dist_js_bootstrap_bundle_min__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_bootstrap_dist_js_bootstrap_bundle_min__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/module.esm.js");
 /* harmony import */ var _splidejs_splide__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @splidejs/splide */ "./node_modules/@splidejs/splide/dist/js/splide.esm.js");
- //import './material_kit/material-kit.min';
+/* Init Bootstrap */
 
+window.Bootstrap = (_node_modules_bootstrap_dist_js_bootstrap_bundle_min__WEBPACK_IMPORTED_MODULE_0___default());
 /* Init Alpine */
 
 
@@ -6754,7 +6755,7 @@ alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].start();
 /* Init SplideJs */
 
 
-window.Splide = _splidejs_splide__WEBPACK_IMPORTED_MODULE_2__["default"];
+window.Splide = _splidejs_splide__WEBPACK_IMPORTED_MODULE_2__["default"]; //import './material_kit/material-kit.min';
 
 /***/ }),
 
