@@ -10,21 +10,11 @@ class CategoryController extends Controller
 {
     public function show(Category $category)
     {
-        /*
-         * We need to get three most popular
-         * We need three most rated courses
-         * 3 new released courses
-         * */
-
-        return view('categories.index', [
+        return view('categories.show', [
+            'coursesToGetYouStarted' => $category->courses()->withCount(['reviews as rating_avg' => function($query) {
+                $query->select(\DB::raw('avg(rating)'));
+            }])->get(),
             'category' => $category,
-            'levels' => Level::all(),
-
         ]);
-    }
-
-    public function get_CoursesToGetYouStarted()
-    {
-        return Course::where('rating', '>', 4)->take(3)->get();
     }
 }

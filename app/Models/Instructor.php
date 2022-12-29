@@ -20,6 +20,15 @@ class Instructor extends Model
       'skills' => 'collection'
     ];
 
+    /**
+     * The relations to eager load on every query.
+     *
+     * @var array
+     */
+    protected $with = [
+        'user:id,name'
+    ];
+
     /*
      * Get the user that belongs to
      * */

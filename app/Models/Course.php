@@ -29,7 +29,7 @@ class Course extends Model
      */
     protected $with = [
         'level:id,name',
-        'instructor.user:id,name'
+        'instructor.user:id,name',
     ];
 
     /**
@@ -83,33 +83,31 @@ class Course extends Model
     }
 
     /*
-     * Get courses rating
+     * Get avg rating for the course
      * */
     public function rating(): Attribute
     {
         return Attribute::get(function() {
-            if($this->reviews_count <= 0) {
-                return 0;
-            }
-
-            $allRatings = 0;
-
-            foreach ($this->reviews as $review) {
-                $allRatings += $review->rating;
-            }
-
-            return number_format( $allRatings / $this->reviews_count, 1);
+            return number_format($this->reviews()->select(\DB::raw('avg(rating) as rating'))->get()->first()->rating, 1);
         });
+    }
+
+    /*
+     * Get formatted rating
+     * */
+    public function formatRating($rating): string
+    {
+        return number_format($rating, 1);
     }
 
     /*
      * Generate stars html
      * */
-    public function getStarsIcons($starColor = 'text-primary'): string
+    public function getStarsIcons($rating, $starColor = 'text-primary'): string
     {
         $html = '';
 
-        $number = $this->getStarsCount();
+        $number = $this->getStarsCount($rating);
 
         for ($i = 1; $i <= $number; $i++) {
             $html .= "<i class='material-icons ${starColor}'>star</i>";
@@ -133,12 +131,12 @@ class Course extends Model
      * [1.0, 1.1, 1.2, 1.3, 1.4] to 1
      * [1.5, 1.6, 1.7, 1.8, 1.9] to 1.5
      * */
-    public function getStarsCount(): string
+    public function getStarsCount($rating): string
     {
         $a = [0,1,2,3,4];
         $b = [5,6,7,8,9];
 
-        $number = $this->rating;
+        $number = $this->formatRating($rating);
 
         $finalNumber = explode('.', $number);
 
@@ -153,5 +151,13 @@ class Course extends Model
         }
 
         return join('.', $finalNumber);
+    }
+
+    /*
+     *
+     * */
+    public function enrollments(): HasMany
+    {
+        return $this->hasMany(Enrollment::class);
     }
 }

@@ -2,12 +2,14 @@
 
 namespace Database\Factories;
 
+use App\Models\Course;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Level>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Enrollment>
  */
-class LevelFactory extends Factory
+class EnrollmentFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +19,7 @@ class LevelFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->unique()->word()
+            'user_id' => User::factory()->create()->id,
         ];
     }
 }

@@ -25,7 +25,7 @@ class CourseFactory extends Factory
             'cover'        => 'https://dreamslms.dreamguystech.com/html/assets/img/course/course-04.jpg',
             'description'  => $this->faker->paragraphs(2, true),
             'requirements' => $this->faker->sentences(3),
-            'is_free'      => true,
+            'is_free'      => $this->faker->boolean(),
             'what_you_will_learn' => $this->faker->sentences(8),
 
             'category_id'   => Category::factory()->create()->id,

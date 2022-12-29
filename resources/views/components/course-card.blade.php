@@ -40,8 +40,8 @@
         <hr class="dark horizontal my-0">
         <div class="card-footer d-flex py-2">
             <p class="d-flex align-items-center font-weight-normal my-auto">
-                {!! $course->getStarsIcons('text-warning') !!}
-                <span class="ms-2"> {{ $course->rating }}</span>
+                {!! $course->getStarsIcons($course->rating_avg, 'text-warning') !!}
+                <span class="ms-2">{{ $course->formatRating($course->rating_avg) }}</span>
                 <span class="ms-2">({{ $course->reviews_count }})</span>
             </p>
             <p class="ms-auto d-flex align-items-center my-auto fs-6 text-dark fw-bold">
@@ -52,27 +52,28 @@
 @else
     <div>
         <div class="d-flex">
-            <div class="me-3 mt-2 mt-md-0 ">
+            <div class="me-3 mt-2 mt-md-0">
                 <img class="horizontal_card-img" src="{{ $course->cover }}" alt="">
             </div>
-            <div class="mt-0 mt-md-2">
-                <h6 class="mb-0"><a class="text-black fw-bolder" href="#">The Complete JavaScript Course 2022: From Zero to Expert</a></h6>
-                <p class="text-blackGray mb-1 fs-7 d-none d-sm-block">A creative and fun course on JavaScript ES6! Has Webpack, Babel, React, and all the new syntax you need to code in ES6!</p>
-                <div><a class="hover_effect" href="#">Mohamed Khalid</a></div>
+            <div class="mt-0 mt-md-2 w-100">
+                <div class="d-flex justify-content-between">
+                    <h6 class="mb-0"><a class="text-black fw-bolder" href="#">{{ $course->title }}</a></h6>
+                    <h5 class="text-blackGray fw-bolder mb-0">
+                        {{ $course->is_free ? 'Free' : 'Paid' }}
+                    </h5>
+                </div>
+                <p class="text-blackGray mb-1 fs-7 d-none d-sm-block">{{ $course->subTitle }}</p>
+                <div><a class="hover_effect" href="#">{{ $course->instructor->user->name }}</a></div>
                 <div class="d-flex align-items-center">
                     <div class="me-1 fw-bolder text-warning fs-5">
-                        4.8
+                        {{ $course->formatRating($course->rating_avg) }}
                     </div>
-                    <i class="material-icons text-warning">star</i>
-                    <i class="material-icons text-warning">star</i>
-                    <i class="material-icons text-warning">star</i>
-                    <i class="material-icons text-warning">star</i>
-                    <i class="material-icons text-warning">star</i>
+                    {!! $course->getStarsIcons($course->rating_avg, 'text-warning') !!}
                 </div>
                 <div class="d-flex gap-2 gap-md-3">
                     <span class="text-blackGray fs-sm-8">69 total hours</span>
-                    <span class="text-blackGray fs-sm-8">320 lectures</span>
-                    <span class="text-blackGray fs-sm-8">All Levels</span>
+                    <span class="text-blackGray fs-sm-8">{{ $course->lessons_count }} lectures</span>
+                    <span class="text-blackGray fs-sm-8">{{ $course->level->name }}</span>
                 </div>
 
             </div>
