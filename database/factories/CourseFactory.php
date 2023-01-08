@@ -30,7 +30,7 @@ class CourseFactory extends Factory
 
             'category_id'   => Category::factory()->create()->id,
             'instructor_id' => Instructor::factory()->create()->id,
-            'level_id'      => Level::factory()->create()->id
+            'level_id'      => rand(1, 4)
         ];
     }
 }

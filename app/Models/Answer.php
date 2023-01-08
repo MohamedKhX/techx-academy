@@ -11,7 +11,7 @@ class Answer extends Model
     use HasFactory;
 
     /*
-     * Get the user who answered the question
+     * Get the user who answered the question.
      * */
     public function user(): BelongsTo
     {

@@ -5,7 +5,9 @@ namespace App\Http\Livewire;
 use App\Models\Category;
 use App\Models\Level;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -13,28 +15,78 @@ class CoursesFilter extends Component
 {
     use WithPagination;
 
+    /*
+     * Courses to show in one page.
+     * */
     const PAGINATION = 8;
 
+    /*
+     * levels to show in levels filter.
+     * */
     public Collection $levels;
+
+    /*
+     * Current category to show.
+     * */
     public Category $category;
 
+    /*
+     * Rating Filter.
+     * */
     public $rating;
+
+    /*
+     * SortBy Filter.
+     * */
     public $sortBy;
+
+    /*
+     * IsPaid Filter.
+     * */
     public $isPaid;
+
+    /*
+     * Is Free Filter.
+     * */
     public $isFree;
+
+    /*
+     * level are selected to filter.
+     * */
     public array $levelsSelected = [];
 
+    /*
+     * Get how much course for every rating filter.
+     * */
+    public array $filterRatingCount = [];
+
+    /*
+     * Livewire pagination theme.
+     * */
     protected $paginationTheme = 'bootstrap';
+
+    /*
+     * Livewire Query String.
+     * */
     protected $queryString = [
         'rating',
-        'sortBy'
+        'sortBy',
+        'isFree',
+        'isPaid',
+        'levelsSelected' => ['as' => 'level'],
     ];
 
+    /*
+     * Mount the livewire component.
+     * */
     public function mount()
     {
         $this->levels = Level::all();
     }
 
+    /*
+     * Get category courses filter.
+     * */
     public function getCategoryCourses(): LengthAwarePaginator
     {
        return $this->category->courses()
@@ -67,6 +119,17 @@ class CoursesFilter extends Component
            ->paginate(CoursesFilter::PAGINATION);
     }
 
+    /*
+     * Get courses count for specific rating.
+     * */
+    public function getFilterRatingCount($rating)
+    {
+        return $this->filterRatingCount[$rating] ?? 0;
+    }
+
+    /*
+     * Clear all filters.
+     * */
     public function clearFilter()
     {
         $this->rating = null;
@@ -111,5 +174,42 @@ class CoursesFilter extends Component
         return view('livewire.courses-filter', [
             'courses' => $this->getCategoryCourses(),
         ]);
+    }
+
+    /*
+     * Get courses count for some rating filters
+     * */
+    private function queryFilterRatingCount(): void
+    {
+        $arr = DB::table('rating_avg_courses')
+            ->where('courses_category_id' , '=', $this->category->id)
+            ->whereIn('course_level_id', [1,2,3,4])
+            ->whereIn('course_is_free', [$this->isFree ? true : null, $this->isPaid ? false : null])
+            ->select([
+                DB::raw("
+                case
+                    when rating >= 4.5 then '4.5'
+                    when rating >= 4.0 then '4.0'
+                    when rating >= 3.5 then '3.5'
+                    when rating >= 3.0 then '3.0'
+                end as rating_filter"),
+                DB::raw('
+                    count(*) as total
+                '),
+                DB::raw('
+                     sum(COUNT(*)) over(ROWS BETWEEN 3 PRECEDING AND CURRENT ROW) as sum_total
+                '),
+            ])
+            ->groupBy('rating_filter')
+            ->havingNotNull('rating_filter')
+            ->get();
+
+        $newArr = [];
+
+        foreach ($arr as $item => $value) {
+            $newArr[$value->rating_filter] = (int) $value->sum_total;
+        }
+
+        $this->filterRatingCount = $newArr;
     }
 }

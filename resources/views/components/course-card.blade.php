@@ -73,9 +73,8 @@
                 <div class="d-flex gap-2 gap-md-3">
                     <span class="text-blackGray fs-sm-8">69 total hours</span>
                     <span class="text-blackGray fs-sm-8">{{ $course->lessons_count }} lectures</span>
-                    <span class="text-blackGray fs-sm-8">{{ $course->level->name }}</span>
+                    <span class="text-blackGray fs-sm-8">{{ $course->level->name ?? null }}</span>
                 </div>
-
             </div>
         </div>
         <hr class="black horizontal mt-3">

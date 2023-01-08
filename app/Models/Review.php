@@ -11,7 +11,7 @@ class Review extends Model
     use HasFactory;
 
     /*
-     * Get the user who wrote the review
+     * Get the user who wrote the review.
      * */
     public function user(): BelongsTo
     {
@@ -19,7 +19,7 @@ class Review extends Model
     }
 
     /*
-     * Get the courses that belong to this review
+     * Get the courses that belong to this review.
      * */
     public function course(): BelongsTo
     {

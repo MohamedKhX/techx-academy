@@ -11,7 +11,7 @@ class Profile extends Model
     use HasFactory;
 
     /*
-     * Get the user that belong to this profile
+     * Get the user that belong to this profile.
      * */
     public function user(): BelongsTo
     {

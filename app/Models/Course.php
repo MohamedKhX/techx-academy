@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\DB;
 
 class Course extends Model
 {
@@ -51,7 +52,7 @@ class Course extends Model
     }
 
     /*
-     * Get the instructor who created this courses
+     * Get the instructor who created this courses.
      * */
     public function instructor(): BelongsTo
     {
@@ -59,7 +60,7 @@ class Course extends Model
     }
 
     /*
-     * Get courses level
+     * Get courses level.
      * */
     public function level(): BelongsTo
     {
@@ -67,7 +68,7 @@ class Course extends Model
     }
 
     /*
-     * Get the category that belongs to
+     * Get the category that belongs to.
      * */
     public function category(): BelongsTo
     {
@@ -75,7 +76,7 @@ class Course extends Model
     }
 
     /*
-     * Get courses reviews
+     * Get courses reviews.
      * */
     public function reviews(): HasMany
     {
@@ -83,17 +84,31 @@ class Course extends Model
     }
 
     /*
-     * Get avg rating for the course
+     * Get course enrollments.
+     * */
+    public function enrollments(): HasMany
+    {
+        return $this->hasMany(Enrollment::class);
+    }
+
+    /*
+     * Get avg rating for the course.
      * */
     public function rating(): Attribute
     {
         return Attribute::get(function() {
-            return number_format($this->reviews()->select(\DB::raw('avg(rating) as rating'))->get()->first()->rating, 1);
+            $avg_rating = $this->reviews()
+                ->select(DB::raw('avg(rating) as rating'))
+                ->join('courses', 'reviews.course_id', '=', 'courses.id')
+                ->first()
+                ->rating;
+
+            return number_format($avg_rating, 1);
         });
     }
 
     /*
-     * Get formatted rating
+     * Get formatted rating.
      * */
     public function formatRating($rating): string
     {
@@ -101,7 +116,7 @@ class Course extends Model
     }
 
     /*
-     * Generate stars html
+     * Generate stars html.
      * */
     public function getStarsIcons($rating, $starColor = 'text-primary'): string
     {
@@ -129,7 +144,7 @@ class Course extends Model
     /*
      * Convert the number for e.g. from 1.3 to 1.5
      * [1.0, 1.1, 1.2, 1.3, 1.4] to 1
-     * [1.5, 1.6, 1.7, 1.8, 1.9] to 1.5
+     * [1.5, 1.6, 1.7, 1.8, 1.9] to 1.5.
      * */
     public function getStarsCount($rating): string
     {
@@ -151,13 +166,5 @@ class Course extends Model
         }
 
         return join('.', $finalNumber);
-    }
-
-    /*
-     *
-     * */
-    public function enrollments(): HasMany
-    {
-        return $this->hasMany(Enrollment::class);
     }
 }

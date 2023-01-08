@@ -2,13 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Topic>
  */
-class CategoryFactory extends Factory
+class TopicFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,8 +18,7 @@ class CategoryFactory extends Factory
     {
         return [
             'name' => $this->faker->unique()->word(),
-            'description' => $this->faker->paragraphs(2, true),
-            'image_url' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png'
+            'description' => $this->faker->paragraphs(10, true)
         ];
     }
 }

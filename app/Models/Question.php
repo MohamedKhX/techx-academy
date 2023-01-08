@@ -12,7 +12,7 @@ class Question extends Model
     use HasFactory;
 
     /*
-     * Get the user who asked this question
+     * Get the user who asked this question.
      * */
     public function user(): BelongsTo
     {
@@ -20,7 +20,7 @@ class Question extends Model
     }
 
     /*
-     * Get the lesson where this question was asked
+     * Get the lesson where this question was asked.
      * */
     public function lesson(): BelongsTo
     {
@@ -28,7 +28,7 @@ class Question extends Model
     }
 
     /*
-     * Get the answers for this question
+     * Get the answers for this question.
      * */
     public function answers(): HasMany
     {

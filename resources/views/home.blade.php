@@ -151,7 +151,7 @@
                                 <hr class="dark horizontal my-0">
                                 <div class="card-footer d-flex py-2">
                                     <p class="d-flex align-items-center font-weight-normal my-auto">
-                                        {!! $course->getStarsIcons() !!}
+                                        {!! $course->getStarsIcons($course->rating) !!}
                                         <span class="ms-2"> {{ $course->rating }}</span>
                                         <span class="ms-2">({{ $course->reviews_count }})</span>
                                     </p>

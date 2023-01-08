@@ -1,10 +1,18 @@
 <x-main-layout>
     <section class="container mt-5 pt-5">
-        <h2 class="text-blackGray mb-3">JavaScript Courses</h2>
-        <p class="mb-1 fw-bolder">JavaScript relates to <a href="#">Web Development</a></p>
+        <h2 class="text-blackGray mb-3">{{ $category->name }} Courses</h2>
+        @if($category->topics_count)
+            <p class="mb-1 fw-bolder">{{ $category->name }} relates to
+                @foreach($category->topics as $topic)
+                    <a href="#">
+                        {{ $loop->last ? $topic->name : $topic->name . ',' }}
+                    </a>
+                @endforeach
+            </p>
+        @endif
         <div class="d-flex align-items-center mt-0 text-blackGray">
             <i class="material-icons me-2">group</i>
-            <span>1345 learners</span>
+            <span>{{ $category->getLearnersCount() }} learners</span>
         </div>
         <hr class="black horizontal">
     </section>
@@ -22,9 +30,9 @@
 
     <section class="container-fluid container-xl mt-7" id="allCoursesSection">
         <hr class="dark horizontal">
-        <h4 class="text-blackGray">All JavaScript courses</h4>
+        <h4 class="text-blackGray">All {{ $category->name }} courses</h4>
         <p class="text-blackGray">
-            Join more than 12 million learners and train up on JavaScript on Udemy. Choose from a wide range of top-rated JavaScript courses. From back-end development to app or website building, we’ve got you covered. Our real-world experts can lead you through hands-on projects to apply your skills.
+            {{ $category->description }}
         </p>
         <hr class="black horizontal">
         <div class="mt-4">

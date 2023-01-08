@@ -63,7 +63,7 @@ class User extends Authenticatable
     ];
 
     /*
-     * Get the instructor if it has one
+     * Get the instructor if it has one.
      * */
     public function instructor(): HasOne
     {
@@ -71,7 +71,7 @@ class User extends Authenticatable
     }
 
     /*
-     * Get the user profile
+     * Get the user profile.
      * */
     public function profile(): HasOne
     {
@@ -79,7 +79,7 @@ class User extends Authenticatable
     }
 
     /*
-     * Get user reviews
+     * Get user reviews.
      * */
     public function reviews(): HasMany
     {
@@ -87,7 +87,7 @@ class User extends Authenticatable
     }
 
     /*
-     *
+     * Get user enrollments.
      * */
     public function enrollments(): HasMany
     {

@@ -30,7 +30,7 @@ class Instructor extends Model
     ];
 
     /*
-     * Get the user that belongs to
+     * Get the user that belongs to.
      * */
     public function user(): BelongsTo
     {
@@ -38,7 +38,7 @@ class Instructor extends Model
     }
 
     /*
-     * Get the courses that was made by this instructor
+     * Get the courses that was made by this instructor.
      * */
     public function courses(): HasMany
     {

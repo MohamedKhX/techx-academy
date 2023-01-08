@@ -11,7 +11,7 @@ class Level extends Model
     use HasFactory;
 
     /*
-     * Get the courses that belong to this level
+     * Get the courses that belong to this level.
      * */
     public function courses(): HasMany
     {

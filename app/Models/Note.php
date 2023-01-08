@@ -15,7 +15,7 @@ class Note extends Model
     const SECONDS_IN_ONE_HOUR = 3600;
 
     /*
-     * Get the user that created this note
+     * Get the user that created this note.
      * */
     public function user(): BelongsTo
     {
@@ -23,7 +23,7 @@ class Note extends Model
     }
 
     /*
-     * Get the lesson where this note was created
+     * Get the lesson where this note was created.
      * */
     public function lesson(): BelongsTo
     {
@@ -31,7 +31,7 @@ class Note extends Model
     }
 
     /*
-     * Convert from seconds to the proper time
+     * Convert from seconds to the proper time.
      * */
     public function at(): Attribute
     {

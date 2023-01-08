@@ -4,7 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use LaravelIdea\Helper\App\Models\_IH_Course_QB;
 
 class Category extends Model
 {
@@ -30,15 +32,43 @@ class Category extends Model
      * @var array
      */
     protected $withCount = [
-        'courses'
+        'courses',
+        'topics',
+    ];
+
+    /**
+     * The relations to eager load on every query.
+     *
+     * @var array
+     */
+    protected $with = [
+        'topics:name',
     ];
 
     /*
-     * Get the courses that belong to this category
+     * Get Topics related to the category.
+     * */
+    public function topics(): BelongsToMany
+    {
+        return $this->belongsToMany(Topic::class);
+    }
+
+    /*
+     * Get the courses that belong to this category.
      * */
     public function courses(): HasMany
     {
         return $this->hasMany(Course::class);
+    }
+
+    /*
+     * Get all learners count by this category.
+     * */
+    public function getLearnersCount(): int
+    {
+        return $this->courses()
+            ->join('enrollments', 'courses.id', '=', 'enrollments.course_id')
+            ->count();
     }
 
 }

@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\Enrollment;
 use App\Models\Instructor;
 use App\Models\Lesson;
 use App\Models\Level;
@@ -73,6 +74,15 @@ class CourseTest extends TestCase
     }
 
     /** @test */
+    public function it_has_enrollments()
+    {
+       Enrollment::factory(10)->create(['course_id' => $this->course->id]);
+
+       $this->assertInstanceOf(Collection::class, $this->course->enrollments);
+       $this->assertInstanceOf(Enrollment::class, $this->course->enrollments->first());
+    }
+
+    /** @test */
     public function the_course_will_be_deleted_when_the_instructor_deleted()
     {
         $instructor = Instructor::factory()->create();
@@ -101,7 +111,7 @@ class CourseTest extends TestCase
             'rating' => 3.5
         ]);
 
-        $course = Course::find(1);
+        $course = Course::find($this->course->id);
 
         $this->assertEquals('3.4', $course->rating);
     }
@@ -119,8 +129,8 @@ class CourseTest extends TestCase
                 Review::first()->delete();
             }
             Review::factory()->create(['course_id' => $courseId, 'rating' => $rating]);
-            $course = Course::find(1);
-            $testCase->assertEquals($expected, $course->getStarsCount());
+            $course = Course::find($courseId);
+            $testCase->assertEquals($expected, $course->getStarsCount($rating));
         }
 
         test(courseId: $this->course->id, rating: 2.0, expected: '2', testCase: $this);

@@ -1,5 +1,4 @@
 <div class="position-relative">
-
     {{-- Start mask and spinner --}}
     <div wire:loading.flex class="justify-content-center position-absolute mt-6" style="display: none; right: 40%; top: 10%">
         <div class="spinner-border text-black" role="status" style="width: 5rem;
@@ -34,9 +33,10 @@
     </div>
     {{-- End Filters Buttons --}}
 
+    {{-- Start Filters Canves --}}
     <div class="row">
-        <div wire:ignore class="col-3 d-lg-block">
-            <div wire:ignore.self class="offcanvas-lg offcanvas-end w-75 w-sm-50 w-lg-100" tabindex="-1" id="filtersOffcanvas" aria-labelledby="filtersOffcanvasLabel">
+        <div class="col-3 d-lg-block">
+            <div  class="offcanvas-lg offcanvas-end w-75 w-sm-50 w-lg-100" tabindex="-1" id="filtersOffcanvas" aria-labelledby="filtersOffcanvasLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="filtersOffcanvasLabel">Filters</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -44,7 +44,7 @@
                 <div class="offcanvas-body d-block">
                     <div>
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="text-dark">2103 results</span>
+                            <span class="text-dark">{{ $courses->count() }} results</span>
                             <a class="fw-bolder text-black fs-5 cursor-pointer" wire:click.prevent="clearFilter">Clear Filters</a>
                         </div>
                         <div class="accordion" id="accordionFilters">
@@ -67,7 +67,7 @@
                                                     <i class='material-icons text-warning fs-6'>star</i>
                                                     <i class='material-icons  fs-6'><span class="text-warning">st</span>ar</i>
                                                     <span class="text-black mx-1">4,5 & up</span>
-                                                    <span class="ms-1">(213)</span>
+                                                    <span class="ms-1">({{ $this->getFilterRatingCount('4.5') }})</span>
                                                 </label>
                                             </div>
                                             <div class="form-check ps-0 mt-1">
@@ -79,7 +79,7 @@
                                                     <i class='material-icons text-warning fs-6'>star</i>
                                                     <i class='material-icons fs-6'>star</i>
                                                     <span class="text-black mx-1">4.0 & up</span>
-                                                    <span class="ms-1">(332)</span>
+                                                    <span class="ms-1">({{ $this->getFilterRatingCount('4.0') }})</span>
                                                 </label>
                                             </div>
                                             <div class="form-check ps-0 mt-1">
@@ -91,7 +91,7 @@
                                                     <i class='material-icons  fs-6'><span class="text-warning">st</span>ar</i>
                                                     <i class='material-icons fs-6'>star</i>
                                                     <span class="text-black mx-1">3.5 & up</span>
-                                                    <span class="ms-1">(634)</span>
+                                                    <span class="ms-1">({{ $this->getFilterRatingCount('3.5') }})</span>
                                                 </label>
                                             </div>
                                             <div class="form-check ps-0 mt-1">
@@ -103,7 +103,7 @@
                                                     <i class='material-icons fs-6'>star</i>
                                                     <i class='material-icons fs-6'>star</i>
                                                     <span class="text-black mx-1">3.0 & up</span>
-                                                    <span class="ms-1">(1023)</span>
+                                                    <span class="ms-1">({{ $this->getFilterRatingCount('3.0') }})</span>
                                                 </label>
                                             </div>
                                         </form>
@@ -204,11 +204,9 @@
                                         </form>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -223,6 +221,7 @@
             </div>
         </div>
     </div>
+    {{-- End Filters Canves --}}
 </div>
 
 
