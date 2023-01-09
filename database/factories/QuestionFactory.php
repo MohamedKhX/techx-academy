@@ -19,8 +19,8 @@ class QuestionFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => User::factory()->create()->id,
-            'lesson_id' => Lesson::factory()->create()->id,
+            'user_id' => User::factory(),
+            'lesson_id' => Lesson::factory(),
             'summary' => $this->faker->paragraph(),
             'body' => $this->faker->realText()
         ];

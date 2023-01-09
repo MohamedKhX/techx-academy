@@ -19,7 +19,7 @@ class LessonFactory extends Factory
     {
         return [
             'name' => $this->faker->word(),
-            'course_id' => Course::factory()->create()->id
+            'course_id' => Course::factory()
         ];
     }
 }

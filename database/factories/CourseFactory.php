@@ -28,8 +28,8 @@ class CourseFactory extends Factory
             'is_free'      => $this->faker->boolean(),
             'what_you_will_learn' => $this->faker->sentences(8),
 
-            'category_id'   => Category::factory()->create()->id,
-            'instructor_id' => Instructor::factory()->create()->id,
+            'category_id'   => Category::factory(),
+            'instructor_id' => Instructor::factory(),
             'level_id'      => rand(1, 4)
         ];
     }

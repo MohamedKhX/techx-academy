@@ -19,8 +19,8 @@ class AnswerFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => User::factory()->create()->id,
-            'question_id' => Question::factory()->create()->id,
+            'user_id' => User::factory(),
+            'question_id' => Question::factory(),
             'body'  => $this->faker->realText()
         ];
     }

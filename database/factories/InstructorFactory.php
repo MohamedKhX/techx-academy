@@ -16,7 +16,7 @@ class InstructorFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => User::factory()->create()->id,
+            'user_id' => User::factory(),
             'skills' => ['Web Design', 'User Interface Design', 'Web Development']
         ];
     }
