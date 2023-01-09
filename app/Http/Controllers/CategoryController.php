@@ -12,10 +12,10 @@ class CategoryController extends Controller
     {
         return view('categories.show', [
             'coursesToGetYouStarted' => $category->courses()
-                ->withCount(['reviews as rating_avg'], function ($query) {
-                    $query->select(\DB::raw('avg(rating)'));
-                })
-                ->whereIn('id', $this->getCoursesToGetYouStarted($category->id))
+                ->addSelect(\DB::raw('avg(rating) as rating_avg'))
+                ->join('reviews', 'reviews.course_id', '=', 'courses.id')
+                ->groupBy('courses.id')
+                ->whereIn('courses.id', $this->getCoursesToGetYouStarted($category->id))
                 ->get(),
             'category' => $category,
         ]);
@@ -46,10 +46,12 @@ class CategoryController extends Controller
             from courses
                 inner join enrollments on courses.id = enrollments.course_id
                 inner join reviews on courses.id = reviews.course_id
-            where category_id = 1
+            where category_id = :category_id
             GROUP by courses.id
             order by avg_rating desc limit 3)
-        ");
+        ", [
+            'category_id' => $categoryId
+        ]);
 
         return collect($arr)
             ->map(function ($item) {
