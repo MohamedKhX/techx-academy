@@ -77,11 +77,12 @@ class CoursesFilter extends Component
     ];
 
     /*
-     * Mount the livewire component.
+     * Mount the live-wire component.
      * */
     public function mount()
     {
         $this->levels = Level::all();
+        $this->queryFilterRatingCount();
     }
 
     /*
@@ -146,26 +147,31 @@ class CoursesFilter extends Component
 
     public function updatedRating()
     {
+        $this->queryFilterRatingCount();
         $this->resetPage();
     }
 
     public function updatedSortBy()
     {
+        $this->queryFilterRatingCount();
         $this->resetPage();
     }
 
     public function updatedLevelsSelected()
     {
+        $this->queryFilterRatingCount();
         $this->resetPage();
     }
 
     public function updatedIsFree()
     {
+        $this->queryFilterRatingCount();
         $this->resetPage();
     }
 
     public function updatedIsPaid()
     {
+        $this->queryFilterRatingCount();
         $this->resetPage();
     }
 
@@ -176,15 +182,19 @@ class CoursesFilter extends Component
         ]);
     }
 
+    private function updateQueries()
+    {
+        $this->queryFilterRatingCount();
+    }
+
     /*
      * Get courses count for some rating filters
      * */
     private function queryFilterRatingCount(): void
     {
-        $arr = DB::table('rating_avg_courses')
-            ->where('courses_category_id' , '=', $this->category->id)
-            ->whereIn('course_level_id', [1,2,3,4])
-            ->whereIn('course_is_free', [$this->isFree ? true : null, $this->isPaid ? false : null])
+        $queryResults = DB::table('rating_avg_courses')
+            ->whereIn('course_level_id', empty($this->levelsSelected) ? [1,2,3,4] : $this->levelsSelected)
+            ->whereIn('course_is_free', [true, false])
             ->select([
                 DB::raw("
                 case
@@ -195,21 +205,28 @@ class CoursesFilter extends Component
                 end as rating_filter"),
                 DB::raw('
                     count(*) as total
-                '),
-                DB::raw('
-                     sum(COUNT(*)) over(ROWS BETWEEN 3 PRECEDING AND CURRENT ROW) as sum_total
-                '),
+                ')
             ])
+            ->where('courses_category_id' , '=', $this->category->id)
             ->groupBy('rating_filter')
             ->havingNotNull('rating_filter')
-            ->get();
+            ->get()
+            ->mapWithKeys(function ($item) {
+                return [$item->rating_filter => $item->total];
+            });
 
-        $newArr = [];
+        $queryResults = function (string $rating) use ($queryResults)
+        {
+            return $queryResults[$rating] ?? 0;
+        };
 
-        foreach ($arr as $item => $value) {
-            $newArr[$value->rating_filter] = (int) $value->sum_total;
-        }
+        $results = [
+            '4.5' => $queryResults('4.5'),
+            '4.0' => $queryResults('4.0') + $queryResults('4.5'),
+            '3.5' => $queryResults('3.5') + $queryResults('4.0') + $queryResults('4.5'),
+            '3.0' => $queryResults('3.0') + $queryResults('3.5') + $queryResults('4.0') + $queryResults('4.5')
+        ];
 
-        $this->filterRatingCount = $newArr;
+        $this->filterRatingCount = $results;
     }
 }

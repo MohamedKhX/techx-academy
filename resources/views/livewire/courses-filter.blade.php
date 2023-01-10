@@ -212,6 +212,7 @@
         </div>
         <div class="col-12 col-lg-9">
             @forelse($courses as $course)
+                {{$course->category->id}}
                 <x-course-card :course="$course" :vertical="false" />
             @empty
                 <h4 class="text-center text-black mt-5">No Results Found...</h4>
